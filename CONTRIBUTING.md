@@ -90,8 +90,7 @@ saca de `GetSchemaForGame` o de la ficha pública de logros del juego en Steam.
    en `sin-clasificar` y explicá la duda en el PR.
 3. **Un paquete incompleto sirve.** La interfaz muestra cuántos logros están
    clasificados y avisa de que el resto es dato de comunidad. Es mejor diez
-   entradas buenas que ochenta inventadas. El paquete de Black Myth: Wukong que
-   viene en el repo es exactamente eso: 19 de 81, y lo dice.
+   entradas buenas que ochenta inventadas: `sin-clasificar` existe para eso.
 
 ## Código
 

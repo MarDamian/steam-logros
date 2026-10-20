@@ -85,20 +85,36 @@ describe('con un paquete de guía completo', () => {
 });
 
 describe('con el paquete real de Wukong', () => {
-  it('dice cuántos logros están clasificados y que el resto es dato de comunidad', async () => {
+  it('dice que los 81 logros están clasificados y cuántos son perdibles', async () => {
     useLocalServer({ guide: 'real' });
     renderApp(RUTA);
 
-    expect(await screen.findByText(/19 de 81 logros clasificados/)).toBeTruthy();
-    expect(screen.getByText(/La API de Steam no dice en qué capítulo/)).toBeTruthy();
-    expect(screen.getAllByText('Sin clasificar').length).toBeGreaterThan(0);
+    expect(await screen.findByText(/81 de 81 logros clasificados, 11 marcados como perdibles/)).toBeTruthy();
+    // Ya no queda nada sin clasificar en la lista.
+    const lista = within(screen.getByRole('list', { name: 'Logros del juego' }));
+    expect(lista.queryAllByText('Sin clasificar')).toHaveLength(0);
+    expect(lista.getAllByText('Se puede perder')).toHaveLength(11);
   });
 
-  it('no dibuja el panel de puntos de no retorno si el paquete no declara ninguno', async () => {
+  it('avisa de los puntos de no retorno que todavía tienen logros pendientes', async () => {
     useLocalServer({ guide: 'real' });
     renderApp(RUTA);
-    await screen.findByText(/19 de 81 logros clasificados/);
-    expect(screen.queryByRole('heading', { name: /puntos de no retorno/i })).toBeNull();
+
+    const titulo = await screen.findByRole('heading', { name: /puntos de no retorno/i });
+    const panel = titulo.closest('section') as HTMLElement;
+    // El perfil de ejemplo no tiene ninguno de los perdibles del Capítulo 4.
+    expect(within(panel).getByText('Pelear contra Duskveil')).toBeTruthy();
+    expect(within(panel).getAllByText(/Te faltan \d+ de aquí/).length).toBeGreaterThan(0);
+    expect(within(panel).getByText('Caminos imprevisibles')).toBeTruthy();
+  });
+
+  it('cada perdible explica qué lo bloquea', async () => {
+    useLocalServer({ guide: 'real' });
+    renderApp(RUTA);
+    await screen.findByText(/81 de 81 logros clasificados/);
+
+    expect(screen.getByText(/La pelea contra Duskveil cierra esta línea para siempre/)).toBeTruthy();
+    expect(screen.getByText(/El Señor Escorpión desaparece al pelear contra Duskveil/)).toBeTruthy();
   });
 });
 

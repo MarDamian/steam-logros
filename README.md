@@ -162,13 +162,22 @@ se recuerda por juego, y el panel **Cuidado: puntos de no retorno**, que lista
 solo los logros que todavía te faltan de cada punto que tengas por delante.
 
 El paquete que viene en el repo, `games/2358720.json` (Black Myth: Wukong),
-tiene **19 de los 81 logros clasificados, y lo dice en la interfaz**. Esos 19
-salen de datos de Steam: el logro que cierra el prólogo es de historia, y los
-que Steam no esconde son los acumulativos de colección y mejora. Los 62 ocultos
-quedan `sin-clasificar` a propósito, que es un estado válido del esquema: un
-aviso de "perdible" equivocado es peor que ninguno cuando alguien va a cambiar
-cómo juega por lo que lea ahí. En [CONTRIBUTING.md](CONTRIBUTING.md) está cómo
-completarlo.
+tiene **los 81 logros clasificados**: 19 de historia, 45 que se pueden hacer en
+cualquier momento, 11 que se pueden perder y 6 que piden NG+. Y declara **cinco
+puntos de no retorno** — pelear contra Duskveil, avanzar en el Capítulo 3,
+vencer al Guardián de la Montaña Llameante, llegar al segundo encuentro con el
+Inspector Supremo, y los enemigos que no vuelven a aparecer.
+
+Los nombres, las descripciones y los porcentajes salen de la API de Steam. La
+clasificación y los requisitos vienen de una guía de la comunidad, **con los
+textos reescritos**: los requisitos de un juego son hechos, pero la redacción de
+cada guía es de quien la escribió. El paquete declara su procedencia en el campo
+`source` y la interfaz la muestra.
+
+El esquema admite `sin-clasificar` como estado válido justamente para que un
+paquete a medias sirva: la interfaz dice cuántos logros están clasificados y
+avisa de que el resto es dato de comunidad. En
+[CONTRIBUTING.md](CONTRIBUTING.md) está cómo añadir un paquete para otro juego.
 
 ### Por qué la biblioteca carga el progreso de a poco
 

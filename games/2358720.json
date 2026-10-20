@@ -5,10 +5,10 @@
   "locale": "es",
   "updatedAt": "2026-10-20",
   "source": {
-    "name": "Lista oficial de logros de Steam",
+    "name": "Clasificación y requisitos de una guía de la comunidad, reescritos; nombres y porcentajes, de Steam",
     "url": "https://steamcommunity.com/stats/2358720/achievements/"
   },
-  "note": "Paquete incompleto a propósito. Los 19 logros clasificados salen de datos de Steam: el que cierra el prólogo es de historia y los que Steam no esconde son los acumulativos de colección y mejora. Los 62 logros ocultos quedan sin clasificar porque decidir si uno se puede perder, y en qué capítulo, es dato de comunidad: la API de Steam no lo tiene. En CONTRIBUTING.md está cómo completarlo.",
+  "note": "Los 81 logros están clasificados. Steam no sabe nada de capítulos ni de logros que se pueden perder: eso viene de una guía de la comunidad, con los textos reescritos. Los nombres, las descripciones y los porcentajes globales sí salen de la API de Steam.",
   "chapters": [
     {
       "id": "prologo",
@@ -49,248 +49,427 @@
   "achievements": {
     "81001": {
       "type": "historia",
-      "chapter": "prologo"
+      "chapter": "prologo",
+      "how": "Terminá el prólogo: vencé a Erlang y mirá la cinemática de apertura."
     },
     "81002": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Forjá cualquier pieza de armadura."
     },
     "81003": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-1",
+      "how": "Vencé a Lingxuzi."
     },
     "81004": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Absorbé el espíritu de un enemigo."
     },
     "81005": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Equipá un remojo en la calabaza."
     },
     "81006": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-1",
+      "how": "Vencé al Noble de Blanco."
     },
     "81007": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Forjá cualquier arma."
     },
     "81008": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-1",
+      "how": "Tocá las tres campanas del Capítulo 1 para descubrir el Templo Guanyin antiguo."
     },
     "81009": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-1",
+      "how": "Vencé al Anciano Jinchi, en el Templo Guanyin antiguo."
     },
     "81010": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-1",
+      "how": "Vencé al Rey del Viento Negro, el jefe final del Capítulo 1."
     },
     "81011": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Preparate cualquier consumible."
     },
     "81012": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé al Rey de las Arenas Movedizas y a los dos Príncipes Rata. El Primer Príncipe es un jefe opcional."
     },
     "81013": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-1",
+      "how": "Vencé al Loong Rojo, escondido detrás de la cascada del Capítulo 1."
     },
     "81014": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-2",
+      "how": "Completá la misión del hombre de piedra del Capítulo 2."
     },
     "81015": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-2",
+      "how": "Vencé al Loong Negro, detrás de la cortina de arena del Capítulo 2."
     },
     "81016": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé a la Vanguardia de Piedra."
     },
     "81017": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Juntá todos los ojos de Buda, usalos para abrir la pelea contra Shigandang y vencelo."
     },
     "81018": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la línea del tambor y vencé al Tigre Demente."
     },
     "81019": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la línea del Jabalí Borracho y llegá al Reino de Sahali."
     },
     "81020": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a la Vanguardia Tigre, a su versión del recuerdo en el Reino de Sahali y al Tigre Demente."
     },
     "81021": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a Fuban, el jefe del Reino de Sahali."
     },
     "81022": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Forjá una píldora con el perro Xu."
     },
     "81023": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-2",
+      "how": "Vencé al Sabio del Viento Amarillo, el jefe final del Capítulo 2."
     },
     "81024": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la línea del prisionero rata de dos cabezas."
     },
     "81025": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé al Capitán Voz Sabia."
     },
     "81026": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé a la Estrella Kang-Jin."
     },
     "81027": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé al Loong Cian."
     },
     "81028": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "chapter": "capitulo-3",
+      "how": "Completá la línea del General Tortuga y el General Serpiente: vencé al Murciélago Apramana y quedate con la Lágrima de Tortuga.",
+      "warning": "El Murciélago Apramana puede desaparecer al avanzar en el Capítulo 3. Hacelo antes de seguir.",
+      "pointOfNoReturn": "avance-capitulo-3"
     },
     "81029": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la línea de Chen Loong y conseguí el Pergamino Ruyi."
     },
     "81030": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Mejorá una pieza de armadura con el Tigre Yin, dentro del Pergamino Ruyi."
     },
     "81031": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Desafiá al Tigre Yin y vencelo."
     },
     "81032": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Dale una semilla a Chen Loong y levantá una cosecha."
     },
     "81033": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-3",
+      "how": "Completá la misión del cazador de tesoros del Capítulo 3 y encontrate con el verdadero Maitreya."
     },
     "81034": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-3",
+      "how": "Completá la misión de la zorra del Capítulo 3."
     },
     "81035": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la misión del Tercer Príncipe juntando las cuatro almas de sus capitanes."
     },
     "81036": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a los cuatro discípulos de Cejas Amarillas."
     },
     "81037": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé al Macaco Jefe en los tres encuentros."
     },
     "81038": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-3",
+      "how": "Vencé a Cejas Amarillas, el jefe final del Capítulo 3."
     },
     "81039": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé a la Mano Derecha de Buda."
     },
     "81040": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé a Zhu Bajie en los dos encuentros."
     },
     "81041": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "how": "Vencé a la Araña Violeta."
     },
     "81042": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé al Loong Amarillo."
     },
     "81043": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé al Daoísta Veneno en los dos encuentros y abrí la Montaña de las Nubes Moradas."
     },
     "81044": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "chapter": "capitulo-4",
+      "how": "Completá toda la línea del Daoísta Mi.",
+      "warning": "La pelea contra Duskveil cierra esta línea para siempre en esta partida. No peleés a Duskveil hasta terminarla.",
+      "pointOfNoReturn": "pelea-duskveil"
     },
     "81045": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "chapter": "capitulo-4",
+      "how": "Vencé al Señor Escorpión y a sus cuatro príncipes escorpión.",
+      "warning": "El Señor Escorpión desaparece al pelear contra Duskveil.",
+      "pointOfNoReturn": "pelea-duskveil"
     },
     "81046": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-4",
+      "how": "Vencé a Duskveil.",
+      "warning": "Antes de pelearlo, cerrá la línea del Daoísta Mi y vencé al Señor Escorpión: después ya no se puede."
     },
     "81047": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "chapter": "capitulo-4",
+      "how": "Completá la línea de la Cuarta Hermana: arrancá los cuatro talismanes morados y vencé al Inspector Supremo en el primer encuentro.",
+      "warning": "Si llegás al segundo encuentro con el Inspector Supremo sin haberla cerrado, se pierde.",
+      "pointOfNoReturn": "segundo-encuentro-inspector"
     },
     "81048": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-4",
+      "how": "Vencé al Maestro Daoísta de los Cien Ojos, el jefe final del Capítulo 4."
     },
     "81049": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-5",
+      "how": "Subí la calabaza inicial al máximo y después hablá con el anciano de la calabaza gigante, en el Capítulo 5."
     },
     "81050": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-5",
+      "how": "Vencé al Guardián de la Montaña Llameante."
     },
     "81051": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "chapter": "capitulo-5",
+      "how": "Hablá con el guai del caballo en cada capítulo y, recién al final, vencé al Guardián de la Montaña Llameante y quedate con su transformación.",
+      "warning": "Si lo salteás en algún capítulo, o vencés al Guardián antes de cerrar la línea, se pierde.",
+      "pointOfNoReturn": "guardian-montana-llameante"
     },
     "81052": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Juntá las 15 semillas para el huerto de Chen Loong."
     },
     "81053": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a los cinco jefes de plantas."
     },
     "81054": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Completá la línea del Hacha Pálida y abrí la Cueva Bishui."
     },
     "81055": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Descubrí todos los puntos de meditación."
     },
     "81056": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a los tres jefes que pelean siempre de a dos."
     },
     "81057": {
-      "type": "sin-clasificar"
+      "type": "perdible",
+      "how": "Juntá todos los espíritus.",
+      "warning": "Dos son perdibles: el Espectro Errante y el Segundo Príncipe de las Arenas Movedizas.",
+      "pointOfNoReturn": "espiritus-y-objetos-perdibles"
     },
     "81058": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a la Bestia de Ojos Dorados de Bishui."
     },
     "81059": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-5",
+      "how": "Vencé al Niño Rojo, el jefe final del Capítulo 5."
     },
     "81060": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Juntá las cuatro vasijas: el manto ignífugo (Cap. 1), el domavientos (Cap. 2), la aguja (Cap. 4) y el abanico de plátano (Cap. 5)."
     },
     "81061": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Entrá al Monte Mei. Hacen falta las zonas secretas de los Capítulos 1 a 5 y hablar con Maitreya en la Gran Pagoda del Capítulo 3."
     },
     "81062": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a Erlang y a los Cuatro Reyes Celestiales en el Monte Mei. Es el camino al final secreto."
     },
     "81063": {
-      "type": "cualquier-momento"
+      "type": "perdible",
+      "how": "Conseguí las diez transformaciones.",
+      "warning": "Dos dependen de líneas perdibles: Granizo Violeta viene de la del Daoísta Mi y Trueno Oscuro de la del guai del caballo.",
+      "pointOfNoReturn": "pelea-duskveil"
     },
     "81064": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Conseguí las nueve bebidas."
     },
     "81065": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-6",
+      "how": "En el Capítulo 6, vencé al Inspector Supremo en el segundo encuentro y quedate con el nimbo."
     },
     "81066": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Vencé a los seis jefes rana repartidos por el juego."
     },
     "81067": {
-      "type": "cualquier-momento"
+      "type": "perdible",
+      "how": "Juntá todas las curiosidades.",
+      "warning": "Dos son perdibles: las cuentas de ojo de gato, que las deja el Espectro Errante, y el farol auspicioso, que sale de matar a los nueve faroleros.",
+      "pointOfNoReturn": "espiritus-y-objetos-perdibles"
     },
     "81068": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "how": "Juntá los cinco skandhas y entregalos al perro Xu."
     },
     "81069": {
-      "type": "cualquier-momento"
+      "type": "cualquier-momento",
+      "how": "Juntá todas las píldoras doradas de salud, resistencia y maná que hay en cada mapa."
     },
     "81070": {
-      "type": "sin-clasificar"
+      "type": "cualquier-momento",
+      "chapter": "capitulo-6",
+      "how": "Vencé a los seis jefes del Monte Huaguo."
     },
     "81071": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-6",
+      "how": "Conseguí las cuatro piezas de la armadura de Wukong venciendo a cuatro jefes del Capítulo 6."
     },
     "81072": {
-      "type": "sin-clasificar"
+      "type": "historia",
+      "chapter": "capitulo-6",
+      "how": "Vencé al Gran Sabio de Casco Roto, el jefe final del juego."
     },
     "81073": {
-      "type": "cualquier-momento"
+      "type": "perdible",
+      "how": "Completá todos los retratos del diario.",
+      "warning": "Dos entradas son perdibles: el Murciélago Apramana y el Señor Escorpión.",
+      "pointOfNoReturn": "avance-capitulo-3"
     },
     "81074": {
-      "type": "sin-clasificar"
+      "type": "ng+",
+      "how": "Entrá en NG+."
     },
     "81075": {
-      "type": "cualquier-momento"
+      "type": "ng+",
+      "how": "Aprendé los siete hechizos. El Hilo Salvavidas se aprende solo al entrar en NG+."
     },
     "81076": {
-      "type": "cualquier-momento"
+      "type": "ng+",
+      "how": "Juntá todas las calabazas. Una solo la vende el mono Shen en NG+."
     },
     "81077": {
-      "type": "cualquier-momento"
+      "type": "ng+",
+      "how": "Juntá todas las fórmulas. Una solo la vende el perro Xu en NG+."
     },
     "81078": {
-      "type": "cualquier-momento"
+      "type": "perdible",
+      "how": "Juntá todos los remojos. Uno solo lo vende el mono Shen en NG+.",
+      "warning": "La Lágrima de Tortuga es perdible, así que este logro depende de que hayas cerrado la línea del General Tortuga a tiempo."
     },
     "81079": {
-      "type": "cualquier-momento"
+      "type": "ng+",
+      "how": "Conseguí todas las piezas de armadura. Los materiales de algunas solo aparecen en NG+."
     },
     "81080": {
-      "type": "cualquier-momento"
+      "type": "ng+",
+      "how": "Conseguí todas las armas. Algunas solo se pueden forjar en NG+."
     },
     "81081": {
-      "type": "cualquier-momento"
+      "type": "perdible",
+      "how": "Conseguí todos los demás logros, incluidos los de NG+.",
+      "warning": "Depende de todos los perdibles: si se te escapa uno, este se va con él en esta partida."
     }
   },
-  "pointsOfNoReturn": []
+  "pointsOfNoReturn": [
+    {
+      "id": "avance-capitulo-3",
+      "chapter": "capitulo-3",
+      "title": "Avanzar en el Capítulo 3",
+      "description": "El Murciélago Apramana puede desaparecer al avanzar en el capítulo, y con él la Lágrima de Tortuga y su entrada del diario.",
+      "locks": [
+        "81028",
+        "81073"
+      ]
+    },
+    {
+      "id": "pelea-duskveil",
+      "chapter": "capitulo-4",
+      "title": "Pelear contra Duskveil",
+      "description": "Esa pelea cierra la línea del Daoísta Mi y hace desaparecer al Señor Escorpión. Cerrá las dos cosas antes de ir.",
+      "locks": [
+        "81044",
+        "81045",
+        "81063",
+        "81073"
+      ]
+    },
+    {
+      "id": "guardian-montana-llameante",
+      "chapter": "capitulo-5",
+      "title": "Vencer al Guardián de la Montaña Llameante",
+      "description": "La línea del guai del caballo necesita que hables con él en cada capítulo y recién después vencer al Guardián. Al revés, se pierde la transformación.",
+      "locks": [
+        "81051",
+        "81063"
+      ]
+    },
+    {
+      "id": "segundo-encuentro-inspector",
+      "chapter": "capitulo-6",
+      "title": "Segundo encuentro con el Inspector Supremo",
+      "description": "La línea de la Cuarta Hermana se cierra en el primer encuentro. Si llegás al segundo sin haberla completado, queda fuera de alcance.",
+      "locks": [
+        "81047"
+      ]
+    },
+    {
+      "id": "espiritus-y-objetos-perdibles",
+      "title": "Enemigos que no vuelven a aparecer",
+      "description": "El Espectro Errante, el Segundo Príncipe de las Arenas Movedizas y los nueve faroleros dejan objetos y espíritus que no se consiguen de otra forma.",
+      "locks": [
+        "81057",
+        "81067"
+      ]
+    }
+  ]
 }

@@ -33,21 +33,53 @@ describe('paquete de Black Myth: Wukong', () => {
     expect(pack.chapters.map((chapter) => chapter.order)).toEqual([0, 1, 2, 3, 4, 5, 6]);
   });
 
-  it('clasifica 19 logros y deja el resto explícitamente sin clasificar', () => {
+  it('no deja ningún logro sin clasificar', () => {
     const tipos = Object.values(pack.achievements).map((entry) => entry.type);
-    expect(tipos.filter((tipo) => tipo === 'sin-clasificar')).toHaveLength(62);
-    expect(tipos.filter((tipo) => tipo !== 'sin-clasificar')).toHaveLength(19);
+    expect(tipos.filter((tipo) => tipo === 'sin-clasificar')).toHaveLength(0);
   });
 
-  it('no inventa ningún aviso de perdible ni punto de no retorno', () => {
-    // Un aviso equivocado es peor que ninguno: mientras no haya datos
-    // verificados, el paquete no marca nada como perdible.
-    expect(Object.values(pack.achievements).filter((entry) => entry.type === 'perdible')).toHaveLength(0);
-    expect(pack.pointsOfNoReturn).toHaveLength(0);
+  it('reparte los tipos como los reparte la guía de la comunidad', () => {
+    const cuenta = (tipo: string) => Object.values(pack.achievements).filter((e) => e.type === tipo).length;
+    // Los dos logros que la guía marca como PERDIBLE/NG+ quedan como perdibles:
+    // es el aviso que cambia cómo jugás, y el NG+ se explica en el texto.
+    expect({
+      historia: cuenta('historia'),
+      perdible: cuenta('perdible'),
+      cualquier: cuenta('cualquier-momento'),
+      ngMas: cuenta('ng+'),
+    }).toEqual({ historia: 19, perdible: 11, cualquier: 45, ngMas: 6 });
+  });
+
+  it('todos los logros explican cómo conseguirlos', () => {
+    for (const [apiName, entry] of Object.entries(pack.achievements)) {
+      expect((entry.how ?? '').length, `${apiName} sin texto`).toBeGreaterThan(10);
+    }
+  });
+
+  it('todo perdible avisa qué lo bloquea', () => {
+    const perdibles = Object.entries(pack.achievements).filter(([, entry]) => entry.type === 'perdible');
+    for (const [apiName, entry] of perdibles) {
+      expect((entry.warning ?? '').length, `${apiName} es perdible y no avisa de nada`).toBeGreaterThan(10);
+    }
+  });
+
+  it('declara los cinco puntos de no retorno y todos bloquean algo real', () => {
+    expect(pack.pointsOfNoReturn).toHaveLength(5);
+    const apiNames = new Set(Object.keys(pack.achievements));
+    for (const point of pack.pointsOfNoReturn) {
+      expect(point.locks.length).toBeGreaterThan(0);
+      for (const apiName of point.locks) {
+        expect(apiNames.has(apiName), `${point.id} bloquea ${apiName}, que no existe`).toBe(true);
+        expect(pack.achievements[apiName]?.type, `${point.id} bloquea ${apiName}, que no es perdible`).toBe(
+          'perdible',
+        );
+      }
+    }
   });
 
   it('dice de dónde salen los datos', () => {
     expect(pack.source?.url).toContain('steamcommunity.com');
+    expect(pack.source?.name).toMatch(/comunidad/i);
     expect(pack.note).toBeTruthy();
   });
 });
@@ -58,6 +90,6 @@ describe('games/index.json', () => {
       guides: { appid: number; total: number; classified: number }[];
     };
     expect(index.guides.map((guide) => `${guide.appid}.json`).sort()).toEqual([...packFiles].sort());
-    expect(index.guides.find((guide) => guide.appid === 2358720)).toMatchObject({ total: 81, classified: 19 });
+    expect(index.guides.find((guide) => guide.appid === 2358720)).toMatchObject({ total: 81, classified: 81 });
   });
 });
