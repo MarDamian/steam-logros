@@ -193,9 +193,16 @@ se cargó, y hay un botón para calcular el resto de una vez.
 `manifest.webmanifest` con iconos de 192, 512 y uno *maskable*, y un service
 worker propio (`public/sw.js`, sin librerías) con tres estrategias: navegación
 por red con el `index.html` cacheado de respaldo (por eso abre sin conexión);
-caché primero para los estáticos, que llevan hash en el nombre; y red primero
-con respaldo cacheado para la API, marcando la copia vieja con la cabecera
-`x-logros-cache: viejo`. Las rutas de login nunca pasan por el service worker.
+**caché primero solo para `/assets/`**, que es lo único que lleva hash en el
+nombre y por lo tanto nunca cambia de contenido; y red primero con respaldo
+cacheado para todo el resto — la API, los iconos y los paquetes de guía —,
+marcando la copia vieja con la cabecera `x-logros-cache: viejo`. Las rutas de
+login nunca pasan por el service worker.
+
+Esa distinción no es teórica: `games/<appid>.json` no lleva hash, y servirlo con
+caché primero dejaba a los navegadores pegados al paquete de guía viejo para
+siempre. `tests/sw.test.ts` ejecuta el service worker con globales simulados y
+comprueba qué estrategia le toca a cada ruta.
 
 ## Tus datos
 

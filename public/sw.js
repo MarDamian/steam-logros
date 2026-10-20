@@ -3,15 +3,17 @@
  *
  * - Navegación: red primero y, si no hay, el index.html cacheado. Es lo que
  *   hace que la app instalada abra sin conexión.
- * - Estáticos nuestros (/assets/, /icons/, /games/): caché primero. Los assets
- *   llevan hash en el nombre, así que nunca quedan viejos.
- * - API: red primero y, si falla, lo último que se haya cacheado, marcado con
- *   una cabecera para que el cliente sepa que es viejo.
+ * - /assets/: caché primero, y solo ahí. Esos archivos llevan hash en el
+ *   nombre, así que un nombre dado nunca cambia de contenido.
+ * - Todo el resto (/games/, /icons/, el manifest y la API): red primero y, si
+ *   falla, lo último que se haya cacheado. Los paquetes de guía y los iconos
+ *   NO llevan hash: con caché primero se quedaban pegados a la versión vieja
+ *   para siempre, que es exactamente lo que pasó con games/2358720.json.
  *
  * Todo lo que no sea del mismo origen pasa de largo: los iconos de Steam los
  * cachea el navegador por su cuenta.
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = `logros-shell-${VERSION}`;
 const DATA_CACHE = `logros-datos-${VERSION}`;
 const SHELL_URLS = ['/', '/manifest.webmanifest', '/icons/icono-192.png'];
@@ -51,8 +53,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  if (/^\/(assets|icons|games)\//.test(url.pathname) || url.pathname === '/manifest.webmanifest') {
+  // Solo los archivos con hash en el nombre se pueden servir desde la caché sin
+  // volver a preguntar: su contenido no cambia nunca.
+  if (url.pathname.startsWith('/assets/')) {
     event.respondWith(cachePrimero(request, SHELL_CACHE));
+    return;
+  }
+
+  if (/^\/(icons|games)\//.test(url.pathname) || url.pathname === '/manifest.webmanifest') {
+    event.respondWith(redPrimero(request, SHELL_CACHE));
     return;
   }
 
