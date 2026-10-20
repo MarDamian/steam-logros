@@ -1,5 +1,7 @@
 import type { Env } from '../env';
 import { KvCache, isKvLike } from './kv';
+
+export { isKvLike } from './kv';
 import { MemoryCache } from './memory';
 import type { CacheStore } from './types';
 

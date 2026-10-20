@@ -4,7 +4,7 @@ import { z } from 'zod';
 import type { ApiErrorCode, GameProgressSummary, SteamLanguage } from '../shared/types';
 import { STEAMID64_RE } from '../shared/steamid';
 import { parseProfileInput } from '../shared/steamid';
-import { getCache } from './cache';
+import { getCache, isKvLike } from './cache';
 import { defaultLanguage, demoSteamId, isMockMode, readEnv, type Env } from './env';
 import { ApiError } from './errors';
 import { mapWithLimit } from './concurrency';
@@ -60,6 +60,8 @@ export function createApp() {
       defaultSteamLanguage: defaultLanguage(env),
       // Sin secreto de sesión o sin URL pública no se puede hacer login seguro.
       loginEnabled: loginIsConfigured(env),
+      // Para poder comprobar desde afuera si el KV quedó bien conectado.
+      cache: isKvLike(env.CACHE) ? ('kv' as const) : ('memoria' as const),
     });
   });
 
