@@ -50,6 +50,8 @@ export type SessionState =
 
 export interface ServerConfig {
   mode: 'live' | 'mock';
+  /** Qué respaldo usa la caché del servidor: KV de Cloudflare o memoria del proceso. */
+  cache: 'kv' | 'memoria';
   demoSteamId: string;
   defaultSteamLanguage: SteamLanguage;
   loginEnabled: boolean;

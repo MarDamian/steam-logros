@@ -36,6 +36,19 @@ describe('/api/config', () => {
   });
 });
 
+describe('respaldo de la caché en /api/config', () => {
+  it('dice "memoria" cuando no hay binding de KV', async () => {
+    const body = (await (await pedir('/api/config', SIN_LOGIN)).json()) as { cache: string };
+    expect(body.cache).toBe('memoria');
+  });
+
+  it('dice "kv" cuando la plataforma da el binding', async () => {
+    const conKv = { ...SIN_LOGIN, CACHE: { get: () => null, put: () => undefined } } as unknown as Record<string, string>;
+    const body = (await (await pedir('/api/config', conKv)).json()) as { cache: string };
+    expect(body.cache).toBe('kv');
+  });
+});
+
 describe('/api/auth/steam/start', () => {
   it('redirige a Steam con nuestro return_to', async () => {
     const response = await pedir('/api/auth/steam/start', CON_LOGIN);
