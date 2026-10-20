@@ -8,7 +8,8 @@
   --bg-elev-2: #18222e;
   --bg-sunken: #070b10;
   --border: #243040;
-  --border-strong: #35475e;
+  /* 3,9:1 sobre --bg: lo que pide WCAG 1.4.11 para el borde de un control. */
+  --border-strong: #5a7290;
 
   --text: #e8eef6;
   --text-dim: #9fb0c3;
@@ -46,7 +47,8 @@
   --bg-elev-2: #eef2f7;
   --bg-sunken: #e4e9f0;
   --border: #d4dce6;
-  --border-strong: #b3c0d0;
+  /* 3,8:1 sobre --bg. */
+  --border-strong: #737f8f;
 
   --text: #121a24;
   --text-dim: #4a5a6e;

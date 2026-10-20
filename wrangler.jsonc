@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "steam-logros",
+  "main": "server/adapters/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+
+  // El frontend compilado se sirve como estáticos de Cloudflare, sin pasar por
+  // el Worker. single-page-application devuelve index.html en las rutas que no
+  // son un archivo, para que funcionen /u/<steamid>/<appid> y /datos.
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+
+  // Caché de las respuestas de Steam. El botón "Deploy to Cloudflare" crea este
+  // namespace solo. Si desplegás a mano, creá el tuyo con
+  //   npx wrangler kv namespace create CACHE
+  // y pegá el id que te devuelve. Si lo borrás, la app funciona igual: la caché
+  // pasa a vivir en memoria del isolate.
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "logros_steam_cache"
+    }
+  ],
+
+  "vars": {
+    "DEFAULT_STEAM_LANGUAGE": "spanish",
+    "DEMO_STEAMID": "76561197960435530",
+    "STEAM_MOCK": "0"
+  }
+}

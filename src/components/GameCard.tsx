@@ -39,7 +39,7 @@ export function GameCard({ game, steamid, progress, onVisible }: Props) {
           height={215}
         />
         <div className="game-card__body">
-          <h3 className="game-card__name">{game.name}</h3>
+          <h2 className="game-card__name">{game.name}</h2>
 
           {game.hasStats && counted !== null && percent !== null ? (
             <>

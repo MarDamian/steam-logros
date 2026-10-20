@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Las pruebas no usan ninguna clave de Steam: todo sale de los fixtures.
+jobs:
+  verificacion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: TypeScript
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Pruebas
+        run: npm test
+
+      - name: Paquetes de guía
+        run: npm run guides:check
+
+      - name: El índice de guías está al día
+        run: git diff --exit-code games/index.json
+
+      - name: Compilar
+        run: npm run build

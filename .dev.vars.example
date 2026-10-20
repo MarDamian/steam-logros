@@ -1,0 +1,10 @@
+# Secretos del servidor. El boton "Deploy to Cloudflare" pide estos valores
+# durante el despliegue y los guarda como secretos del Worker.
+#
+# Clave de la Web API de Steam: https://steamcommunity.com/dev/apikey
+STEAM_API_KEY=
+# Secreto para firmar la cookie de sesion: openssl rand -hex 32
+SESSION_SECRET=
+# URL publica de la app, sin barra final. Tiene que ser el dominio real:
+# de aqui salen el return_to y el realm del login de Steam.
+PUBLIC_BASE_URL=

@@ -4,6 +4,7 @@ dist/
 .env.*
 !.env.example
 .wrangler/
+.dev.vars
 .vercel/
 .netlify/
 *.log

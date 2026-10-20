@@ -27,5 +27,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "server", "shared", "tests", "tools", "vite.config.ts", "vite.plugin-guides.ts", "vitest.config.ts", "eslint.config.js"]
+  "include": ["src", "server", "shared", "tests", "tools", "api", "netlify", "vite.config.ts", "vite.plugin-guides.ts", "vitest.config.ts", "eslint.config.js"]
 }

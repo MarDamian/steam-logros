@@ -2,10 +2,15 @@
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { existsSync, readFileSync } from 'node:fs';
-import { config as loadDotenv } from 'dotenv';
 import { createApp } from '../app';
 
-loadDotenv({ path: '.env', quiet: true });
+// Node trae lectura de .env desde la 20.6: no hace falta dotenv, y así el
+// servidor se puede empaquetar a un solo archivo ESM sin requires dinámicos.
+try {
+  process.loadEnvFile('.env');
+} catch {
+  /* sin .env no pasa nada: las variables pueden venir del entorno */
+}
 
 const port = Number(process.env.API_PORT ?? process.env.PORT ?? 8787);
 const app = createApp();
