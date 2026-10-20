@@ -42,6 +42,20 @@ export function useLibrary(steamid: string | null) {
   });
 }
 
+/**
+ * Lee la biblioteca que ya esté en caché sin pedirla. Sirve para sacar el
+ * nombre de tienda de un juego sin gastar una llamada a Steam: si venís de la
+ * biblioteca ya está, y si entraste por un enlace compartido simplemente no hay.
+ */
+export function useCachedLibrary(steamid: string | null) {
+  return useQuery({
+    queryKey: ['library', steamid],
+    queryFn: ({ signal }) => api.library(steamid as string, signal),
+    enabled: false,
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
 export function useCatalog(appid: number, language: SteamLanguage) {
   return useQuery({
     queryKey: ['catalog', appid, language],
@@ -60,6 +74,12 @@ export function useProgress(steamid: string | null, appid: number) {
 }
 
 const summaryKey = (steamid: string, appid: number) => ['progress-summary', steamid, appid] as const;
+
+/**
+ * Pausa entre lotes. Steam responde 502 cuando se lo apura, y "calcular el
+ * progreso de todo" en una biblioteca de cientos de juegos es exactamente eso.
+ */
+const PAUSA_ENTRE_LOTES_MS = 300;
 
 export interface LibraryProgressController {
   /** Resumen ya conocido de un juego, o null si todavía no se pidió. */
@@ -138,6 +158,9 @@ export function useLibraryProgress(steamid: string | null): LibraryProgressContr
 
         for (const summary of results) {
           queryClient.setQueryData(summaryKey(batchOwner, summary.appid), summary);
+        }
+        if (queue.current.length > 0) {
+          await new Promise((resolve) => setTimeout(resolve, PAUSA_ENTRE_LOTES_MS));
         }
         if (batchOwner === steamid) {
           setSummaries((previous) => {

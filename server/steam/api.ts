@@ -157,7 +157,18 @@ export function createLiveSteamApi(env: Env, cache: CacheStore): SteamApi {
     },
 
     async getProgressSummary(steamid, appid) {
-      return summaryFromProgress(api, steamid, appid);
+      // Esto se cachea aunque falle. Steam contesta 502 cuando lo apuran, y una
+      // biblioteca grande puede pedir cientos de juegos: sin esto, una ventana
+      // de 502 hace que cada recarga vuelva a castigar a Steam con todo.
+      const key = `sum:${steamid}:${appid}`;
+      const hit = await cache.get<GameProgressSummary>(key);
+      if (hit !== null) return hit;
+
+      const summary = await summaryFromProgress(api, steamid, appid);
+      // "Sin logros" y "perfil privado" son estables; un fallo de Steam, no.
+      const ttl = summary.unavailable === 'STEAM_UNAVAILABLE' ? TTL.progressFailure : TTL.progress;
+      await cache.set(key, summary, ttl);
+      return summary;
     },
   };
 
