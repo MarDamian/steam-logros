@@ -1,8 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   // Nombre del Worker al que se despliega. `wrangler deploy` lo lee de acá, así
-  // que tiene que coincidir con el Worker que exista en la cuenta. Si clonás
-  // este repo, cambialo por el tuyo.
+  // que tiene que coincidir con el Worker que exista en la cuenta — no con el
+  // nombre del repo, que acá es "steam-logros". Si clonás este repo, cambialo
+  // por el tuyo.
   "name": "steam-logros-cf",
   "main": "server/adapters/worker.ts",
   "compatibility_date": "2026-10-01",
