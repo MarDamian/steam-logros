@@ -48,8 +48,14 @@ openssl rand -hex 32
 
 ### 3. Apretá el botón
 
-Con el botón de **Deploy to Cloudflare**: te clona el repo, te pide los tres
-valores y crea solo el namespace de KV para la caché.
+Con el botón de **Deploy to Cloudflare**: te clona el repo y te pide los tres
+valores. No hace falta crear ningún recurso: la caché de las respuestas de Steam
+arranca en memoria.
+
+Si después querés que la caché sobreviva entre peticiones (menos llamadas a
+Steam y un límite por IP que no se reinicia), agregale un KV desde el panel —
+**Settings → Bindings → Add → KV namespace**, con el nombre de binding `CACHE`.
+No hay que tocar código: el servidor detecta el binding en tiempo de ejecución.
 
 Con el de **Vercel**: igual, te pide los tres valores en el formulario.
 

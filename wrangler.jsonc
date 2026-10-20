@@ -14,17 +14,18 @@
     "not_found_handling": "single-page-application"
   },
 
-  // Caché de las respuestas de Steam. El botón "Deploy to Cloudflare" crea este
-  // namespace solo. Si desplegás a mano, creá el tuyo con
-  //   npx wrangler kv namespace create CACHE
-  // y pegá el id que te devuelve. Si lo borrás, la app funciona igual: la caché
-  // pasa a vivir en memoria del isolate.
-  "kv_namespaces": [
-    {
-      "binding": "CACHE",
-      "id": "logros_steam_cache"
-    }
-  ],
+  // Sin KV declarado a propósito: así el despliegue no depende de ningún recurso
+  // previo y el botón de "Deploy to Cloudflare" funciona de una. La caché de las
+  // respuestas de Steam vive en memoria del isolate.
+  //
+  // Para pasarla a KV, que sobrevive entre peticiones y reduce las llamadas a
+  // Steam, no hay que tocar código: el servidor detecta el binding en tiempo de
+  // ejecución (server/cache/index.ts). Dos formas:
+  //
+  //   a) Desde el panel: Workers & Pages -> steam-logros -> Settings -> Bindings
+  //      -> Add -> KV namespace, con el nombre de binding CACHE.
+  //   b) Desde la terminal: `npx wrangler kv namespace create CACHE` y pegar acá
+  //      el id que devuelve, dentro de un bloque "kv_namespaces".
 
   "vars": {
     "DEFAULT_STEAM_LANGUAGE": "spanish",
