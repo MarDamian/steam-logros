@@ -14,7 +14,7 @@ global y el nivel de rareza.
 | 1 | Esqueleto, API serverless, entrada por SteamID, biblioteca y vista de juego | listo |
 | 2 | Login con OpenID 2.0 de Steam, sesión firmada y seguridad | listo |
 | 3 | Capa de guía por juego (perdibles, capítulos) y notas | listo |
-| 4 | PWA, exportar/importar, enlaces para compartir | pendiente |
+| 4 | PWA, exportar/importar, enlaces para compartir | listo |
 | 5 | README completo, despliegue en un clic, CI | pendiente |
 
 ## Correrlo en local
@@ -106,6 +106,37 @@ completarlo.
 
 Además, cada logro acepta una **nota propia** y una marca de "resuelto por mí",
 que se guardan en `localStorage` de ese dispositivo.
+
+## Instalable en el celular
+
+Hay `manifest.webmanifest` con iconos de 192, 512 y uno *maskable*, y un
+service worker propio en `public/sw.js` (sin librerías) con tres estrategias:
+
+- **navegación**: red primero y, si no hay, el `index.html` cacheado — por eso
+  la app instalada abre sin conexión;
+- **estáticos nuestros** (`/assets/`, `/icons/`, `/games/`): caché primero, que
+  es seguro porque los assets llevan hash en el nombre;
+- **API**: red primero y, si falla, la última respuesta guardada, marcada con la
+  cabecera `x-logros-cache: viejo`.
+
+Las rutas de login (`/api/auth/`) nunca pasan por el service worker: son
+redirecciones. El service worker se registra solo en producción.
+
+## Tus datos
+
+Las notas, las marcas propias y el capítulo en el que vas se guardan en
+`localStorage`. No hay servidor donde queden copiados, así que en **Mis datos**
+(`/datos`) están el exportar a JSON y el importar, con dos modos: *mezclar*
+(gana la nota más reciente de cada logro) o *reemplazar* lo que haya de cada
+juego. También está el borrado total de lo guardado en el dispositivo.
+
+## Compartir progreso
+
+`/u/<steamid>` y `/u/<steamid>/<appid>` son direcciones públicas de solo
+lectura: no necesitan sesión y muestran lo que Steam dice de ese perfil. El
+botón **Compartir** copia la dirección. Cuando el perfil que se mira no es el
+que este dispositivo considera propio, la vista avisa de que es el progreso de
+otra persona y que las notas que escribas son tuyas.
 
 ## Comandos
 

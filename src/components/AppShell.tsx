@@ -4,6 +4,7 @@ import type { Locale } from '@shared/types';
 import { useI18n } from '@/i18n';
 import { api } from '@/lib/api';
 import { useSession } from '@/lib/queries';
+import { rememberOwnProfile } from '@/lib/profile';
 import { useTheme, type ThemeChoice } from '@/lib/theme';
 
 export function AppShell() {
@@ -14,6 +15,8 @@ export function AppShell() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const sessionSteamId = session.data?.authenticated ? session.data.steamid : null;
+  // Si entró con Steam, ese es su perfil: sirve para avisar cuando mira otro.
+  if (sessionSteamId !== null) rememberOwnProfile(sessionSteamId);
 
   async function logout(): Promise<void> {
     await api.logout();
@@ -100,7 +103,12 @@ export function AppShell() {
       </main>
 
       <footer className="footer">
-        <div className="container">{t('footer.disclaimer')}</div>
+        <div className="container stack stack--tight">
+          <p>
+            <Link to="/datos">{t('nav.data')}</Link>
+          </p>
+          <p>{t('footer.disclaimer')}</p>
+        </div>
       </footer>
     </>
   );

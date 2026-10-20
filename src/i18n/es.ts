@@ -153,6 +153,33 @@ export const es = {
   'rarity.muyRara': 'Muy rara',
   'rarity.ultraRara': 'Ultra rara',
 
+  'share.button': 'Compartir',
+  'share.copied': 'Enlace copiado',
+  'share.hint': 'Quien abra ese enlace ve este progreso en modo solo lectura.',
+  'share.readOnlyTitle': 'Estás viendo el progreso de otra persona',
+  'share.readOnlyBody':
+    'Los logros y las fechas son de este perfil de Steam. Las notas que escribas son tuyas y se guardan solo en tu dispositivo.',
+
+  'data.title': 'Mis datos',
+  'data.intro':
+    'Las notas, las marcas propias y el capítulo en el que vas se guardan en este dispositivo. No hay servidor donde queden copiados, así que para llevarlos a otro teléfono hay que exportarlos.',
+  'data.stored': 'Guardado ahora: {juegos} juegos, {notas} notas, {capitulos} capítulos.',
+  'data.export': 'Exportar a un archivo JSON',
+  'data.import': 'Importar desde un archivo',
+  'data.importMode': 'Al importar',
+  'data.importMode.mezclar': 'Mezclar (gana la nota más reciente)',
+  'data.importMode.reemplazar': 'Reemplazar lo que haya de cada juego',
+  'data.imported': 'Importado: {juegos} juegos, {notas} notas, {capitulos} capítulos.',
+  'data.importError': 'No se pudo importar: {motivo}',
+  'data.clear': 'Borrar todo lo guardado en este dispositivo',
+  'data.clearConfirm': '¿Seguro? Esto borra tus notas y marcas de este dispositivo. No se puede deshacer.',
+  'data.cleared': 'Listo: se borraron {cantidad} entradas.',
+  'data.nothing': 'Todavía no hay nada guardado.',
+  'nav.data': 'Mis datos',
+
+  'pwa.installHint': 'Se puede instalar en el celular desde el menú del navegador: "Añadir a la pantalla de inicio".',
+  'pwa.offline': 'Sin conexión. Esto es lo último que se guardó.',
+
   'loading.generic': 'Cargando…',
   'footer.disclaimer':
     'Proyecto independiente, sin relación con Valve ni con Steam. Los datos de logros vienen de la Web API pública de Steam.',

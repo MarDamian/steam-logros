@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useI18n } from '@/i18n';
 import { api } from '@/lib/api';
 import { useConfig, useSession } from '@/lib/queries';
+import { rememberOwnProfile } from '@/lib/profile';
 import { parseProfileInput } from '@shared/steamid';
 import { ErrorNotice } from '@/components/ErrorNotice';
 
@@ -24,6 +25,8 @@ export function Home() {
     setBusy(true);
     try {
       const { steamid } = await api.resolve(input.trim());
+      // Lo que la persona pega es su perfil; el modo demo no cuenta.
+      rememberOwnProfile(steamid);
       void navigate(`/u/${steamid}`);
     } catch (resolveError) {
       setError(resolveError);

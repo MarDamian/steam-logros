@@ -154,6 +154,33 @@ export const en: Dictionary = {
   'rarity.muyRara': 'Very rare',
   'rarity.ultraRara': 'Ultra rare',
 
+  'share.button': 'Share',
+  'share.copied': 'Link copied',
+  'share.hint': 'Anyone opening that link sees this progress read-only.',
+  'share.readOnlyTitle': 'You are viewing someone else’s progress',
+  'share.readOnlyBody':
+    'Achievements and dates belong to this Steam profile. Any note you write is yours and stays on your device only.',
+
+  'data.title': 'My data',
+  'data.intro':
+    'Notes, your own marks and the chapter you are on live on this device. There is no server keeping a copy, so moving them to another phone means exporting them.',
+  'data.stored': 'Stored right now: {juegos} games, {notas} notes, {capitulos} chapters.',
+  'data.export': 'Export to a JSON file',
+  'data.import': 'Import from a file',
+  'data.importMode': 'When importing',
+  'data.importMode.mezclar': 'Merge (most recent note wins)',
+  'data.importMode.reemplazar': 'Replace whatever each game has',
+  'data.imported': 'Imported: {juegos} games, {notas} notes, {capitulos} chapters.',
+  'data.importError': 'Could not import: {motivo}',
+  'data.clear': 'Delete everything stored on this device',
+  'data.clearConfirm': 'Are you sure? This deletes your notes and marks from this device. It cannot be undone.',
+  'data.cleared': 'Done: {cantidad} entries deleted.',
+  'data.nothing': 'Nothing stored yet.',
+  'nav.data': 'My data',
+
+  'pwa.installHint': 'You can install it on your phone from the browser menu: “Add to Home screen”.',
+  'pwa.offline': 'Offline. This is the last thing that was saved.',
+
   'loading.generic': 'Loading…',
   'footer.disclaimer':
     'Independent project, not affiliated with Valve or Steam. Achievement data comes from the public Steam Web API.',

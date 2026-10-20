@@ -5,6 +5,7 @@ import { GameCard } from '@/components/GameCard';
 import { ErrorNotice } from '@/components/ErrorNotice';
 import { ClientApiError } from '@/lib/api';
 import { SkeletonGrid } from '@/components/Loading';
+import { ShareButton } from '@/components/ShareButton';
 import { useI18n } from '@/i18n';
 import { useLibrary, useLibraryProgress, usePlayer } from '@/lib/queries';
 import { LIBRARY_SORTS_NEEDING_PROGRESS, sortGames, type LibrarySort } from '@/lib/sorting';
@@ -63,6 +64,8 @@ export function Library() {
               </p>
             ) : null}
           </div>
+          <span className="header__spacer" />
+          <ShareButton path={`/u/${steamid}`} />
         </div>
       </header>
 

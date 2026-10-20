@@ -17,6 +17,15 @@ const queryClient = new QueryClient({
   },
 });
 
+// El service worker solo en producción: en desarrollo molesta más de lo que ayuda.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {
+      /* sin service worker la app funciona igual, solo no queda instalable */
+    });
+  });
+}
+
 const container = document.getElementById('root');
 if (!container) throw new Error('Falta #root en index.html');
 

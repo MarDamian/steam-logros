@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Logros Steam">
+  <rect width="512" height="512" fill="#0b1016"/>
+  <circle cx="256" cy="256" r="110" fill="none" stroke="#243040" stroke-width="18"/>
+  <path d="M256 256 m0 -110 a110 110 0 0 1 77.78 187.78" fill="none" stroke="#f0b429" stroke-width="18" stroke-linecap="round"/>
+  <path d="M256 178 l21.6 43.8 48.4 7-35 34.1 8.2 48.2-43.2-22.7-43.2 22.7 8.2-48.2-35-34.1 48.4-7z" fill="#f0b429"/>
+</svg>

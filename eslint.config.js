@@ -60,6 +60,15 @@ export default tseslint.config(
   },
 
   {
+    // El service worker es JS suelto en public/: no está en el tsconfig y usa
+    // las APIs del worker, no las del navegador.
+    files: ['public/**/*.js'],
+    extends: [tseslint.configs.disableTypeChecked],
+    languageOptions: { globals: { ...globals.serviceworker, ...globals.browser } },
+    rules: { 'no-undef': 'error' },
+  },
+
+  {
     files: ['tests/**/*.{ts,tsx}'],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
     rules: { '@typescript-eslint/no-non-null-assertion': 'off' },

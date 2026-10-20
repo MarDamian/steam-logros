@@ -14,12 +14,14 @@ import { AchievementRow } from '@/components/AchievementRow';
 import { ErrorNotice } from '@/components/ErrorNotice';
 import { SkeletonRows } from '@/components/Loading';
 import { PointsOfNoReturn } from '@/components/PointsOfNoReturn';
+import { ShareButton } from '@/components/ShareButton';
 import { ProgressBar } from '@/components/Progress';
 import { useI18n } from '@/i18n';
 import type { MessageKey } from '@/i18n/es';
 import { ClientApiError } from '@/lib/api';
 import { errorCodeOf } from '@/lib/apiErrors';
 import { useGuide, useGuideIndex } from '@/lib/guide';
+import { isSomeoneElse } from '@/lib/profile';
 import { useCurrentChapter, useNotes } from '@/lib/notes';
 import { steamLanguageFor, useCatalog, useProgress } from '@/lib/queries';
 import { sortAchievements, type AchievementSort } from '@/lib/sorting';
@@ -118,9 +120,17 @@ export function Game() {
 
   return (
     <div className="stack">
-      <p>
+      <div className="row" style={{ justifyContent: 'space-between' }}>
         <Link to={`/u/${steamid}`}>&larr; {t('game.back')}</Link>
-      </p>
+        <ShareButton path={`/u/${steamid}/${appid}`} />
+      </div>
+
+      {isSomeoneElse(steamid) ? (
+        <div className="notice notice--info">
+          <p className="notice__title">{t('share.readOnlyTitle')}</p>
+          <p className="muted">{t('share.readOnlyBody')}</p>
+        </div>
+      ) : null}
 
       <section className="game-hero">
         <img
