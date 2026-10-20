@@ -19,10 +19,10 @@ export class ClientApiError extends Error {
   }
 }
 
-async function request<T>(path: string, signal?: AbortSignal): Promise<T> {
+async function request<T>(path: string, signal?: AbortSignal, init?: RequestInit): Promise<T> {
   let response: Response;
   try {
-    response = await fetch(path, { headers: { accept: 'application/json' }, signal });
+    response = await fetch(path, { ...init, headers: { accept: 'application/json' }, signal });
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') throw error;
     throw new ClientApiError('NETWORK', 'No se pudo contactar con el servidor.');
@@ -44,6 +44,10 @@ async function request<T>(path: string, signal?: AbortSignal): Promise<T> {
   return body as T;
 }
 
+export type SessionState =
+  | { authenticated: false }
+  | { authenticated: true; steamid: string; player: PlayerSummary | null };
+
 export interface ServerConfig {
   mode: 'live' | 'mock';
   demoSteamId: string;
@@ -53,6 +57,13 @@ export interface ServerConfig {
 
 export const api = {
   config: (signal?: AbortSignal) => request<ServerConfig>('/api/config', signal),
+
+  me: (signal?: AbortSignal) => request<SessionState>('/api/me', signal),
+
+  logout: () => request<{ ok: boolean }>('/api/auth/logout', undefined, { method: 'POST' }),
+
+  /** Ruta a la que hay que navegar (no hacer fetch) para arrancar el login. */
+  loginStartPath: '/api/auth/steam/start',
 
   resolve: (input: string, signal?: AbortSignal) =>
     request<{ steamid: string }>(`/api/resolve?input=${encodeURIComponent(input)}`, signal),

@@ -16,6 +16,14 @@ export function useConfig() {
   });
 }
 
+export function useSession() {
+  return useQuery({
+    queryKey: ['me'],
+    queryFn: ({ signal }) => api.me(signal),
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
 export function usePlayer(steamid: string | null) {
   return useQuery({
     queryKey: ['player', steamid],

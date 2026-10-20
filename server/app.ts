@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { deleteCookie, getCookie, setCookie } from 'hono/cookie';
 import { z } from 'zod';
 import type { ApiErrorCode, GameProgressSummary, SteamLanguage } from '../shared/types';
 import { STEAMID64_RE } from '../shared/steamid';
@@ -9,6 +10,19 @@ import { ApiError } from './errors';
 import { mapWithLimit } from './concurrency';
 import { clientIp, enforceRateLimit } from './ratelimit';
 import { createSteamApi, MOCK_STEAMID } from './steam';
+import { buildLoginUrl, verifyAssertion } from './auth/openid';
+import {
+  SESSION_COOKIE,
+  SESSION_TTL_SECONDS,
+  newSessionPayload,
+  signSession,
+  verifySession,
+} from './auth/session';
+
+/** El login se limita más fuerte que el resto: 20 intentos cada 5 minutos por IP. */
+const AUTH_RATE_LIMIT = { limit: 20, windowSeconds: 300 };
+/** Los nonce usados se recuerdan un rato para que una aserción no sirva dos veces. */
+const NONCE_TTL_SECONDS = 15 * 60;
 
 /** Como máximo 4 llamadas simultáneas a Steam por petición nuestra. */
 const PROGRESS_CONCURRENCY = 4;
@@ -44,9 +58,73 @@ export function createApp() {
       // En modo fixtures el único perfil que existe es el de ejemplo.
       demoSteamId: isMockMode(env) ? MOCK_STEAMID : demoSteamId(env),
       defaultSteamLanguage: defaultLanguage(env),
-      /** El login de Steam llega en la fase 2. */
-      loginEnabled: false,
+      // Sin secreto de sesión o sin URL pública no se puede hacer login seguro.
+      loginEnabled: loginIsConfigured(env),
     });
+  });
+
+  // ---------- login con Steam (OpenID 2.0) ----------
+
+  app.get('/api/auth/steam/start', async (c) => {
+    const env = readEnv(c.env);
+    await enforceRateLimit(getCache(env), clientIp(c.req.raw.headers), AUTH_RATE_LIMIT);
+    return c.redirect(buildLoginUrl(requireBaseUrl(env)), 302);
+  });
+
+  app.get('/api/auth/steam/return', async (c) => {
+    const env = readEnv(c.env);
+    const cache = getCache(env);
+    await enforceRateLimit(cache, clientIp(c.req.raw.headers), AUTH_RATE_LIMIT);
+    const baseUrl = requireBaseUrl(env);
+    const secret = requireSessionSecret(env);
+
+    const result = await verifyAssertion(new URL(c.req.url).searchParams, {
+      baseUrl,
+      isNonceUsed: async (nonce) => (await cache.get<boolean>(`nonce:${nonce}`)) === true,
+    });
+
+    if (!result.ok) {
+      // El motivo viaja en la URL solo para que la interfaz pueda explicarlo.
+      return c.redirect(`${baseUrl}/?login=error&motivo=${encodeURIComponent(result.reason)}`, 302);
+    }
+
+    await cache.set(`nonce:${result.nonce}`, true, NONCE_TTL_SECONDS);
+    setCookie(c, SESSION_COOKIE, await signSession(newSessionPayload(result.steamid), secret), {
+      httpOnly: true,
+      sameSite: 'Lax',
+      secure: baseUrl.startsWith('https://'),
+      path: '/',
+      maxAge: SESSION_TTL_SECONDS,
+    });
+    return c.redirect(`${baseUrl}/u/${result.steamid}`, 302);
+  });
+
+  app.post('/api/auth/logout', (c) => {
+    const env = readEnv(c.env);
+    deleteCookie(c, SESSION_COOKIE, {
+      path: '/',
+      secure: (env.PUBLIC_BASE_URL ?? '').startsWith('https://'),
+    });
+    return c.json({ ok: true });
+  });
+
+  /** Quién está en sesión. Nunca devuelve 401: la app funciona igual sin login. */
+  app.get('/api/me', async (c) => {
+    const env = readEnv(c.env);
+    const secret = env.SESSION_SECRET;
+    if (!secret) return c.json({ authenticated: false as const });
+
+    const session = await verifySession(getCookie(c, SESSION_COOKIE), secret);
+    if (!session) return c.json({ authenticated: false as const });
+
+    try {
+      const steam = createSteamApi(env, getCache(env));
+      const player = await steam.getPlayerSummary(session.sub);
+      return c.json({ authenticated: true as const, steamid: session.sub, player });
+    } catch {
+      // La sesión vale aunque Steam no conteste justo ahora.
+      return c.json({ authenticated: true as const, steamid: session.sub, player: null });
+    }
   });
 
   app.get('/api/resolve', async (c) => {
@@ -143,6 +221,26 @@ function parseAppidList(raw: string | undefined): number[] {
   }
   const appids = parts.map((part) => parseOrThrow(appidSchema, part));
   return [...new Set(appids)];
+}
+
+export function loginIsConfigured(env: Env): boolean {
+  return Boolean(env.SESSION_SECRET) && Boolean(env.PUBLIC_BASE_URL);
+}
+
+function requireBaseUrl(env: Env): string {
+  const baseUrl = (env.PUBLIC_BASE_URL ?? '').trim().replace(/\/+$/, '');
+  if (!/^https?:\/\/[^\s]+$/.test(baseUrl)) {
+    throw new ApiError('INTERNAL', 'Falta PUBLIC_BASE_URL en el servidor.');
+  }
+  return baseUrl;
+}
+
+function requireSessionSecret(env: Env): string {
+  const secret = env.SESSION_SECRET ?? '';
+  if (secret.length < 16) {
+    throw new ApiError('INTERNAL', 'Falta SESSION_SECRET (o es demasiado corto) en el servidor.');
+  }
+  return secret;
 }
 
 function resolveLanguage(raw: string | undefined, env: Env): SteamLanguage {

@@ -12,7 +12,7 @@ global y el nivel de rareza.
 | Fase | Qué incluye | Estado |
 | --- | --- | --- |
 | 1 | Esqueleto, API serverless, entrada por SteamID, biblioteca y vista de juego | listo |
-| 2 | Login con OpenID 2.0 de Steam, sesión firmada y seguridad | pendiente |
+| 2 | Login con OpenID 2.0 de Steam, sesión firmada y seguridad | listo |
 | 3 | Capa de guía por juego (perdibles, capítulos) y notas | pendiente |
 | 4 | PWA, exportar/importar, enlaces para compartir | pendiente |
 | 5 | README completo, despliegue en un clic, CI | pendiente |
@@ -40,6 +40,38 @@ STEAM_MOCK=0
 
 La clave vive **solo** en el servidor: no se envía al navegador ni aparece en
 las respuestas de la API.
+
+## Login con Steam
+
+Es OpenID 2.0, el único mecanismo que ofrece Valve. **Solo identifica a la
+persona**: Steam no entrega contraseña, correo ni permiso alguno sobre la cuenta.
+
+Para habilitarlo hacen falta dos variables:
+
+```
+SESSION_SECRET=$(openssl rand -hex 32)
+PUBLIC_BASE_URL=https://tu-dominio      # sin barra final
+```
+
+`PUBLIC_BASE_URL` no es decorativa: de ahí salen el `return_to` y el `realm` que
+se le mandan a Steam, y contra ella se valida la respuesta. Si no coincide con
+el dominio real, el login falla a propósito.
+
+Qué hace el servidor con la respuesta de Steam:
+
+1. Comprueba `mode=id_res`, el namespace de OpenID 2.0 y que el `op_endpoint`
+   sea exactamente `https://steamcommunity.com/openid/login`.
+2. Exige que `claimed_id` sea `https://steamcommunity.com/openid/id/<17 dígitos>`
+   y que `identity` apunte al mismo.
+3. Exige que `return_to` sea exactamente el nuestro.
+4. Exige que la firma cubra `claimed_id`, `identity`, `return_to`,
+   `response_nonce` y `op_endpoint`.
+5. Rechaza nonces viejos (más de 10 minutos) y nonces ya usados.
+6. Y recién entonces le pregunta a Steam con `check_authentication`. Sin un
+   `is_valid:true` no hay sesión.
+
+La sesión es una cookie `httpOnly`, `SameSite=Lax`, `Secure` en https, firmada
+con HMAC-SHA256. No hay base de datos ni estado en el servidor.
 
 ## Para que Steam muestre tus logros
 

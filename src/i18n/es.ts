@@ -6,6 +6,8 @@ export const es = {
   'nav.home': 'Inicio',
   'nav.library': 'Biblioteca',
   'nav.changeProfile': 'Cambiar perfil',
+  'nav.myLibrary': 'Mi biblioteca',
+  'nav.logout': 'Salir',
   'nav.theme': 'Tema',
   'nav.theme.dark': 'Oscuro',
   'nav.theme.light': 'Claro',
@@ -19,7 +21,18 @@ export const es = {
   'home.inputPlaceholder': '76561197960435530 o steamcommunity.com/id/tunombre',
   'home.inputHint': 'Acepto los 17 dígitos del SteamID64, una URL /profiles/… o una URL personalizada /id/….',
   'home.submit': 'Ver mis logros',
-  'home.loginSoon': 'El botón "Entrar con Steam" llega en la próxima fase.',
+  'home.loginSteam': 'Entrar con Steam',
+  'home.loginOnlyIdentifies':
+    'Entrar con Steam solo sirve para saber quién sos. Valve no nos da tu contraseña ni ningún permiso sobre tu cuenta, y la verificación se hace siempre en el servidor.',
+  'home.loginDisabled':
+    'Este servidor no tiene configurado el login (hacen falta SESSION_SECRET y PUBLIC_BASE_URL). Igual podés pegar tu SteamID.',
+  'home.loginError': 'No se pudo completar el login con Steam.',
+  'home.loginErrorReason': 'Motivo técnico: {motivo}',
+  'home.sessionActive': 'Ya entraste como {nombre}.',
+  'home.goToMyLibrary': 'Ir a mi biblioteca',
+  'home.or': 'o',
+  'home.noTracking':
+    'Sin analítica y sin rastreo. La clave de Steam vive solo en el servidor y tus notas se guardan en tu dispositivo.',
   'home.demo': 'Probar con un perfil de ejemplo',
   'home.demoHint': 'No hace falta cuenta ni clave para mirar el ejemplo.',
   'home.privacyTitle': 'Qué necesita tu perfil',

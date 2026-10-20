@@ -7,6 +7,8 @@ export const en: Dictionary = {
   'nav.home': 'Home',
   'nav.library': 'Library',
   'nav.changeProfile': 'Change profile',
+  'nav.myLibrary': 'My library',
+  'nav.logout': 'Sign out',
   'nav.theme': 'Theme',
   'nav.theme.dark': 'Dark',
   'nav.theme.light': 'Light',
@@ -20,7 +22,18 @@ export const en: Dictionary = {
   'home.inputPlaceholder': '76561197960435530 or steamcommunity.com/id/yourname',
   'home.inputHint': 'I accept a 17-digit SteamID64, a /profiles/… URL or a custom /id/… URL.',
   'home.submit': 'Show my achievements',
-  'home.loginSoon': 'The “Sign in through Steam” button lands in the next phase.',
+  'home.loginSteam': 'Sign in through Steam',
+  'home.loginOnlyIdentifies':
+    'Signing in through Steam only tells us who you are. Valve never gives us your password or any permission over your account, and every assertion is verified server-side.',
+  'home.loginDisabled':
+    'This server has no login configured (it needs SESSION_SECRET and PUBLIC_BASE_URL). You can still paste your SteamID.',
+  'home.loginError': 'Could not finish the Steam sign-in.',
+  'home.loginErrorReason': 'Technical reason: {motivo}',
+  'home.sessionActive': 'You are signed in as {nombre}.',
+  'home.goToMyLibrary': 'Go to my library',
+  'home.or': 'or',
+  'home.noTracking':
+    'No analytics, no tracking. The Steam key lives only on the server and your notes stay on your device.',
   'home.demo': 'Try it with an example profile',
   'home.demoHint': 'No account and no API key needed for the example.',
   'home.privacyTitle': 'What your profile needs',

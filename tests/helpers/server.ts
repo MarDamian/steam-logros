@@ -5,8 +5,20 @@ import { createApp } from '../../server/app';
  * Así las pruebas de interfaz ejercitan el cliente HTTP, las rutas, el parseo
  * con Zod y los fixtures, sin red y sin clave de Steam.
  */
-export function useLocalServer(): void {
+export interface LocalServerOptions {
+  /** Configura el login de Steam (SESSION_SECRET y PUBLIC_BASE_URL). */
+  login?: boolean;
+}
+
+export function useLocalServer(options: LocalServerOptions = {}): void {
   process.env.STEAM_MOCK = '1';
+  if (options.login) {
+    process.env.SESSION_SECRET = 'secreto-de-pruebas-suficientemente-largo';
+    process.env.PUBLIC_BASE_URL = 'http://localhost:5173';
+  } else {
+    delete process.env.SESSION_SECRET;
+    delete process.env.PUBLIC_BASE_URL;
+  }
   const app = createApp();
   const origin = 'http://localhost';
 

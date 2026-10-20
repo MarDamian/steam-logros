@@ -1,12 +1,25 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { useQueryClient } from '@tanstack/react-query';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 import type { Locale } from '@shared/types';
 import { useI18n } from '@/i18n';
+import { api } from '@/lib/api';
+import { useSession } from '@/lib/queries';
 import { useTheme, type ThemeChoice } from '@/lib/theme';
 
 export function AppShell() {
   const { t, locale, setLocale } = useI18n();
   const { choice, setChoice } = useTheme();
   const { steamid } = useParams();
+  const session = useSession();
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const sessionSteamId = session.data?.authenticated ? session.data.steamid : null;
+
+  async function logout(): Promise<void> {
+    await api.logout();
+    await queryClient.invalidateQueries({ queryKey: ['me'] });
+    void navigate('/');
+  }
 
   return (
     <>
@@ -26,7 +39,23 @@ export function AppShell() {
           <span className="header__spacer" />
 
           <div className="header__tools">
-            {steamid ? (
+            {sessionSteamId && steamid !== sessionSteamId ? (
+              <Link className="btn btn--small btn--ghost" to={`/u/${sessionSteamId}`}>
+                {t('nav.myLibrary')}
+              </Link>
+            ) : null}
+
+            {sessionSteamId ? (
+              <button
+                type="button"
+                className="btn btn--small btn--ghost"
+                onClick={() => {
+                  void logout();
+                }}
+              >
+                {t('nav.logout')}
+              </button>
+            ) : steamid ? (
               <Link className="btn btn--small btn--ghost" to="/">
                 {t('nav.changeProfile')}
               </Link>
