@@ -1,0 +1,71 @@
+/* Paleta y medidas. Todo el color de la app sale de acá: la fase 3 puede
+   retematizar sin tocar componentes. Contraste verificado sobre --bg. */
+:root {
+  color-scheme: dark light;
+
+  --bg: #0b1016;
+  --bg-elev: #121a24;
+  --bg-elev-2: #18222e;
+  --bg-sunken: #070b10;
+  --border: #243040;
+  --border-strong: #35475e;
+
+  --text: #e8eef6;
+  --text-dim: #9fb0c3;
+  --text-faint: #6f8298;
+
+  --accent: #f0b429;
+  --accent-ink: #2a1c00;
+  --accent-soft: #3a2c08;
+  --link: #6cc6ff;
+
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+
+  --rarity-comun: #8fa3b8;
+  --rarity-pocoComun: #6cc6ff;
+  --rarity-rara: #a78bfa;
+  --rarity-muyRara: #f472b6;
+  --rarity-ultraRara: #fb923c;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --gap: 1rem;
+  --maxw: 72rem;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.25);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f5f7fa;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #eef2f7;
+  --bg-sunken: #e4e9f0;
+  --border: #d4dce6;
+  --border-strong: #b3c0d0;
+
+  --text: #121a24;
+  --text-dim: #4a5a6e;
+  --text-faint: #6b7b90;
+
+  --accent: #9a6b00;
+  --accent-ink: #fffaf0;
+  --accent-soft: #fdf0d2;
+  --link: #0a5fa8;
+
+  --ok: #0f7a3d;
+  --warn: #8a5a00;
+  --danger: #b4231f;
+
+  --rarity-comun: #566677;
+  --rarity-pocoComun: #0a5fa8;
+  --rarity-rara: #6d35c9;
+  --rarity-muyRara: #b4195f;
+  --rarity-ultraRara: #a84a00;
+
+  --shadow: 0 1px 2px rgb(16 24 40 / 0.08), 0 8px 24px rgb(16 24 40 / 0.08);
+}

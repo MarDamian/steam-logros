@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.wrangler/
+.vercel/
+.netlify/
+*.log
+npm-debug.log*
+.DS_Store
+coverage/
+.vite/
+.idea/
+.vscode/

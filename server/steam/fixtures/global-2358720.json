@@ -1,0 +1,335 @@
+{
+  "achievementpercentages": {
+    "achievements": [
+      {
+        "name": "81001",
+        "percent": "97.7"
+      },
+      {
+        "name": "81003",
+        "percent": "84.8"
+      },
+      {
+        "name": "81002",
+        "percent": "84.6"
+      },
+      {
+        "name": "81004",
+        "percent": "83.6"
+      },
+      {
+        "name": "81005",
+        "percent": "81.2"
+      },
+      {
+        "name": "81006",
+        "percent": "80.3"
+      },
+      {
+        "name": "81007",
+        "percent": "78.7"
+      },
+      {
+        "name": "81010",
+        "percent": "78.1"
+      },
+      {
+        "name": "81008",
+        "percent": "74.8"
+      },
+      {
+        "name": "81009",
+        "percent": "74.3"
+      },
+      {
+        "name": "81012",
+        "percent": "73.9"
+      },
+      {
+        "name": "81016",
+        "percent": "71.3"
+      },
+      {
+        "name": "81011",
+        "percent": "70.3"
+      },
+      {
+        "name": "81023",
+        "percent": "67.9"
+      },
+      {
+        "name": "81025",
+        "percent": "63.8"
+      },
+      {
+        "name": "81019",
+        "percent": "63.6"
+      },
+      {
+        "name": "81021",
+        "percent": "63.4"
+      },
+      {
+        "name": "81026",
+        "percent": "62.9"
+      },
+      {
+        "name": "81015",
+        "percent": "61.5"
+      },
+      {
+        "name": "81013",
+        "percent": "60.8"
+      },
+      {
+        "name": "81022",
+        "percent": "60.5"
+      },
+      {
+        "name": "81014",
+        "percent": "60.1"
+      },
+      {
+        "name": "81017",
+        "percent": "59.8"
+      },
+      {
+        "name": "81037",
+        "percent": "59.0"
+      },
+      {
+        "name": "81038",
+        "percent": "58.8"
+      },
+      {
+        "name": "81039",
+        "percent": "56.5"
+      },
+      {
+        "name": "81027",
+        "percent": "56.3"
+      },
+      {
+        "name": "81029",
+        "percent": "55.4"
+      },
+      {
+        "name": "81018",
+        "percent": "55.3"
+      },
+      {
+        "name": "81040",
+        "percent": "55.2"
+      },
+      {
+        "name": "81041",
+        "percent": "54.9"
+      },
+      {
+        "name": "81020",
+        "percent": "54.9"
+      },
+      {
+        "name": "81033",
+        "percent": "53.7"
+      },
+      {
+        "name": "81048",
+        "percent": "52.9"
+      },
+      {
+        "name": "81031",
+        "percent": "52.6"
+      },
+      {
+        "name": "81028",
+        "percent": "51.4"
+      },
+      {
+        "name": "81050",
+        "percent": "51.3"
+      },
+      {
+        "name": "81043",
+        "percent": "51.1"
+      },
+      {
+        "name": "81059",
+        "percent": "50.6"
+      },
+      {
+        "name": "81046",
+        "percent": "50.2"
+      },
+      {
+        "name": "81065",
+        "percent": "50.1"
+      },
+      {
+        "name": "81032",
+        "percent": "50.0"
+      },
+      {
+        "name": "81035",
+        "percent": "49.4"
+      },
+      {
+        "name": "81042",
+        "percent": "49.1"
+      },
+      {
+        "name": "81071",
+        "percent": "48.6"
+      },
+      {
+        "name": "81030",
+        "percent": "48.3"
+      },
+      {
+        "name": "81024",
+        "percent": "48.0"
+      },
+      {
+        "name": "81060",
+        "percent": "47.9"
+      },
+      {
+        "name": "81072",
+        "percent": "46.5"
+      },
+      {
+        "name": "81036",
+        "percent": "46.3"
+      },
+      {
+        "name": "81056",
+        "percent": "46.2"
+      },
+      {
+        "name": "81054",
+        "percent": "46.2"
+      },
+      {
+        "name": "81058",
+        "percent": "46.0"
+      },
+      {
+        "name": "81047",
+        "percent": "45.0"
+      },
+      {
+        "name": "81044",
+        "percent": "44.0"
+      },
+      {
+        "name": "81061",
+        "percent": "43.8"
+      },
+      {
+        "name": "81034",
+        "percent": "43.8"
+      },
+      {
+        "name": "81062",
+        "percent": "42.0"
+      },
+      {
+        "name": "81074",
+        "percent": "40.9"
+      },
+      {
+        "name": "81045",
+        "percent": "39.6"
+      },
+      {
+        "name": "81075",
+        "percent": "39.4"
+      },
+      {
+        "name": "81068",
+        "percent": "39.0"
+      },
+      {
+        "name": "81049",
+        "percent": "38.7"
+      },
+      {
+        "name": "81066",
+        "percent": "37.2"
+      },
+      {
+        "name": "81051",
+        "percent": "36.5"
+      },
+      {
+        "name": "81053",
+        "percent": "35.3"
+      },
+      {
+        "name": "81070",
+        "percent": "32.0"
+      },
+      {
+        "name": "81069",
+        "percent": "31.7"
+      },
+      {
+        "name": "81064",
+        "percent": "31.1"
+      },
+      {
+        "name": "81063",
+        "percent": "29.8"
+      },
+      {
+        "name": "81055",
+        "percent": "29.0"
+      },
+      {
+        "name": "81073",
+        "percent": "25.3"
+      },
+      {
+        "name": "81077",
+        "percent": "22.8"
+      },
+      {
+        "name": "81076",
+        "percent": "21.5"
+      },
+      {
+        "name": "81080",
+        "percent": "18.3"
+      },
+      {
+        "name": "81057",
+        "percent": "17.5"
+      },
+      {
+        "name": "81052",
+        "percent": "16.2"
+      },
+      {
+        "name": "81067",
+        "percent": "15.4"
+      },
+      {
+        "name": "81078",
+        "percent": "14.2"
+      },
+      {
+        "name": "81079",
+        "percent": "14.0"
+      },
+      {
+        "name": "81081",
+        "percent": "12.6"
+      }
+    ]
+  },
+  "_fixture": {
+    "source": "ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2",
+    "appid": 2358720,
+    "capturedAt": "2026-10-20"
+  }
+}
