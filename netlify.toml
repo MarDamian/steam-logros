@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# El router del cliente se ocupa de /u/<steamid>/<appid> y /datos.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

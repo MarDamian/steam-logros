@@ -1,0 +1,576 @@
+{
+  "playerstats": {
+    "steamID": "76561198000000001",
+    "gameName": "Black Myth: Wukong",
+    "achievements": [
+      {
+        "apiname": "81001",
+        "achieved": 1,
+        "unlocktime": 1786746551,
+        "name": "Atrás queda el hogar",
+        "description": "El viejo mono ha hablado. Es hora de avanzar."
+      },
+      {
+        "apiname": "81002",
+        "achieved": 1,
+        "unlocktime": 1786751722,
+        "name": "Martillo y cincel",
+        "description": "Si te armas de los pies a la cabeza, ante el enemigo muestras entereza."
+      },
+      {
+        "apiname": "81003",
+        "achieved": 1,
+        "unlocktime": 1786756893,
+        "name": "En guerra con los lobos",
+        "description": "¡Emplea un nombre falso! ¡Hay que llevarlo al cadalso!"
+      },
+      {
+        "apiname": "81004",
+        "achieved": 1,
+        "unlocktime": 1786762064,
+        "name": "Absorber y cultivar",
+        "description": "Consume a quienes consumieron."
+      },
+      {
+        "apiname": "81005",
+        "achieved": 1,
+        "unlocktime": 1786767235,
+        "name": "Un trago valiente",
+        "description": "¡Un buen trago aderezado hace al hombre más osado!"
+      },
+      {
+        "apiname": "81006",
+        "achieved": 1,
+        "unlocktime": 1786772406,
+        "name": "Serpiente escurridiza",
+        "description": "Vestido de blanco ha defendido su postura. Concédele unos días libres de amargura."
+      },
+      {
+        "apiname": "81007",
+        "achieved": 1,
+        "unlocktime": 1786777577,
+        "name": "Útil y tenaz",
+        "description": "Un buen combate requiere una buena arma."
+      },
+      {
+        "apiname": "81008",
+        "achieved": 1,
+        "unlocktime": 1786782748,
+        "name": "Ecos imperecederos",
+        "description": "Tres cantos de hierro; un alma, un destierro."
+      },
+      {
+        "apiname": "81009",
+        "achieved": 1,
+        "unlocktime": 1786787919,
+        "name": "El templo de la impureza",
+        "description": "La larga espera del anciano toca a su fin."
+      },
+      {
+        "apiname": "81010",
+        "achieved": 1,
+        "unlocktime": 1786793090,
+        "name": "Viento Negro abrasador",
+        "description": "Con tantas opciones a tu disposición, ¿has decidido jugar con fuego?"
+      },
+      {
+        "apiname": "81011",
+        "achieved": 1,
+        "unlocktime": 1786798261,
+        "name": "Brebaje ingenioso",
+        "description": "¡Los tónicos son buenos compañeros, pero es mejor no engullirlos enteros!"
+      },
+      {
+        "apiname": "81012",
+        "achieved": 1,
+        "unlocktime": 1786803432,
+        "name": "Clan maldito",
+        "description": "Un nido de ratas se dispersa para siempre."
+      },
+      {
+        "apiname": "81013",
+        "achieved": 1,
+        "unlocktime": 1786808603,
+        "name": "Garras enjauladas",
+        "description": "El humo se eleva y su perdición abreva."
+      },
+      {
+        "apiname": "81014",
+        "achieved": 1,
+        "unlocktime": 1786813774,
+        "name": "Sonido de piedra",
+        "description": "A palabras necias, oídos sordos."
+      },
+      {
+        "apiname": "81015",
+        "achieved": 1,
+        "unlocktime": 1786818945,
+        "name": "Funesta desesperación",
+        "description": "Grandes olas que retumban, bajo el suelo lo sepultan."
+      },
+      {
+        "apiname": "81016",
+        "achieved": 1,
+        "unlocktime": 1786824116,
+        "name": "El secreto pétreo",
+        "description": "Esta curiosa piedra oculta algo peculiar en su interior."
+      },
+      {
+        "apiname": "81017",
+        "achieved": 1,
+        "unlocktime": 1786829287,
+        "name": "Om mani padme hum",
+        "description": "Busca las cabezas de los Budas. En esta peligrosa tierra yacen piedras."
+      },
+      {
+        "apiname": "81018",
+        "achieved": 1,
+        "unlocktime": 1786834458,
+        "name": "Enterrado en la tierra",
+        "description": "Entre viento y arena, sin un claro camino, vagan el muchacho y el felino."
+      },
+      {
+        "apiname": "81019",
+        "achieved": 1,
+        "unlocktime": 1786839629,
+        "name": "Destellos dorados",
+        "description": "Según el borracho, aquí hay oro. ¿Será cierto?"
+      },
+      {
+        "apiname": "81020",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "La familia a rayas",
+        "description": "Los hermanos y el padre. Ya los has conocido a todos."
+      },
+      {
+        "apiname": "81021",
+        "achieved": 1,
+        "unlocktime": 1786844800,
+        "name": "Arenas cambiantes",
+        "description": "El escarabajo entre redobles llegó y con las olas suavemente se marchó."
+      },
+      {
+        "apiname": "81022",
+        "achieved": 1,
+        "unlocktime": 1786849971,
+        "name": "Píldoras preciosas",
+        "description": "En la fragua hay fuego, y en el fuego hay píldoras."
+      },
+      {
+        "apiname": "81023",
+        "achieved": 1,
+        "unlocktime": 1786855142,
+        "name": "Un gran vendaval",
+        "description": "Habrá sabios por doquier si las raíces no haces desaparecer."
+      },
+      {
+        "apiname": "81024",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "La misión de las mil millas",
+        "description": "Qué calamidad aconteció a quien tan larga travesía recorrió."
+      },
+      {
+        "apiname": "81025",
+        "achieved": 1,
+        "unlocktime": 1786860313,
+        "name": "Se hace el silencio",
+        "description": "Ojos rojos y cantos erróneos."
+      },
+      {
+        "apiname": "81026",
+        "achieved": 1,
+        "unlocktime": 1786865484,
+        "name": "Karma de Kang-Jin",
+        "description": "Una muesca menos en la cúpula estelar."
+      },
+      {
+        "apiname": "81027",
+        "achieved": 1,
+        "unlocktime": 1786870655,
+        "name": "Amargura infinita",
+        "description": "El ocaso ilumina la claridad de la nieve y la rigidez la tragedia promueve."
+      },
+      {
+        "apiname": "81028",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Coraza y escamas",
+        "description": "Morir es tan triste como vivir en soledad."
+      },
+      {
+        "apiname": "81029",
+        "achieved": 1,
+        "unlocktime": 1786875826,
+        "name": "El secreto del pergamino",
+        "description": "Junto a la cabaña los cultivos prosperan; en el Reino Dibujado, sus corazones esperan."
+      },
+      {
+        "apiname": "81030",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "De yunque y martillo",
+        "description": "«Con fuego la armadura se refina y con adversidad la fuerza se determina»."
+      },
+      {
+        "apiname": "81031",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Rasgando el aire",
+        "description": "Una mera prueba de destreza que te puede costar la cabeza."
+      },
+      {
+        "apiname": "81032",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Feliz cosecha",
+        "description": "Campo bien segado, tiempo aprovechado."
+      },
+      {
+        "apiname": "81033",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Dulce maravilla",
+        "description": "Un extraño hombre y una desaparecida parcela de sandías; un conjuro maravilloso y una reunión inesperada."
+      },
+      {
+        "apiname": "81034",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Ansías que en polvo se tornan",
+        "description": "Todo el mundo tiene su propia verdad."
+      },
+      {
+        "apiname": "81035",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Capitanes corruptos",
+        "description": "¿Cuán fuertes serían esos cuatro espíritus si pudiera emplear su poder?"
+      },
+      {
+        "apiname": "81036",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Discípulos devotos",
+        "description": "Qué forma de desperdiciar esos cuatro grandes títulos."
+      },
+      {
+        "apiname": "81037",
+        "achieved": 1,
+        "unlocktime": 1786880997,
+        "name": "Contienda con el macaco",
+        "description": "No hay que esperar que llegue el momento oportuno para buscar la grandeza."
+      },
+      {
+        "apiname": "81038",
+        "achieved": 1,
+        "unlocktime": 1786886168,
+        "name": "Ingeniosas necedades",
+        "description": "Por la boca muere el monje."
+      },
+      {
+        "apiname": "81039",
+        "achieved": 1,
+        "unlocktime": 1786891339,
+        "name": "Con el rostro embarrado",
+        "description": "A extraño yaokuai muerto, extraño espejo puesto."
+      },
+      {
+        "apiname": "81040",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Rencilla rechinante",
+        "description": "Áspero, incombustible e imprudente. Frío, lodoso y maloliente."
+      },
+      {
+        "apiname": "81041",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Se extinguió la llama",
+        "description": "Ninguno ha echado la vista atrás."
+      },
+      {
+        "apiname": "81042",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "El patrón del loong",
+        "description": "Al cielo se eleva y su final encuentra."
+      },
+      {
+        "apiname": "81043",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "El secreto de las Nubes Moradas",
+        "description": "«¿De qué sirven ocho brazos contra veinte golpes de mi bastón?»."
+      },
+      {
+        "apiname": "81044",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Caminos imprevisibles",
+        "description": "«¿Es esa fealdad un promesa de inmortalidad? Más vale ignorarla»."
+      },
+      {
+        "apiname": "81045",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Una familia destruida",
+        "description": "Los escorpiones, la familia, por fin reunida."
+      },
+      {
+        "apiname": "81046",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Cantó el gallo",
+        "description": "Tan azarosa es la vida: a veces amable, a veces esquiva."
+      },
+      {
+        "apiname": "81047",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Inadaptada con mérito",
+        "description": "Ella nunca verá junto a él el mundo que espera más allá."
+      },
+      {
+        "apiname": "81048",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Traición a la vista",
+        "description": "No por tener más ojos se dejan de ver las nimiedades mortales."
+      },
+      {
+        "apiname": "81049",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Siempre en compañía",
+        "description": "¡¿Cómo es posible que siempre esté en todas partes?!"
+      },
+      {
+        "apiname": "81050",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "El muchacho de la fragua",
+        "description": "¡Ja! ¡Un daoísta devoto no debería ser tan pulcro!"
+      },
+      {
+        "apiname": "81051",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Deseos frustrados",
+        "description": "«¡Pagaré con mi vida por el título que me concedió!»."
+      },
+      {
+        "apiname": "81052",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Semillas que sembrar",
+        "description": "Quien semillas planta, frutos levanta."
+      },
+      {
+        "apiname": "81053",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Tallos con alma",
+        "description": "Has segado uno tras otro, fácil y difícil."
+      },
+      {
+        "apiname": "81054",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Un guerrero dispuesto",
+        "description": "«Por su reconocimiento daría mi vida por él»."
+      },
+      {
+        "apiname": "81055",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Amante de lo pintoresco",
+        "description": "Has visitado todos los mejores lugares de meditación."
+      },
+      {
+        "apiname": "81056",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Tres equipos de dos",
+        "description": "Los seis valientes capitanes que solo luchan en grupo."
+      },
+      {
+        "apiname": "81057",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Plenitud espiritual",
+        "description": "Sus poderosos espíritus yacen ahora en tu interior."
+      },
+      {
+        "apiname": "81058",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Llama y escarcha",
+        "description": "Rápido y certero es el vínculo entre hielo y fuego."
+      },
+      {
+        "apiname": "81059",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Furia ardiente",
+        "description": "Humo y fuego trajo bajo el brazo el hijo y, al dispersarse, la familia se deshizo."
+      },
+      {
+        "apiname": "81060",
+        "achieved": 1,
+        "unlocktime": 1786896510,
+        "name": "Tesoro escondido",
+        "description": "«¡Tengo en mi poder los cuatro artefactos!»."
+      },
+      {
+        "apiname": "81061",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Recuerdos en el Mei",
+        "description": "Lazos de antaño que aún afligen el corazón."
+      },
+      {
+        "apiname": "81062",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Una antigua rivalidad",
+        "description": "«Déjalo estar y te dejará estar a ti»."
+      },
+      {
+        "apiname": "81063",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Un sinfín de formas",
+        "description": "Cada disfraz otorga un nuevo horizonte."
+      },
+      {
+        "apiname": "81064",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Bebidas y barriles",
+        "description": "Por fin puedes saciar tu sed."
+      },
+      {
+        "apiname": "81065",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "A lomos de una nube",
+        "description": "¡Las alas palidecen en comparación con este grandioso don!"
+      },
+      {
+        "apiname": "81066",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "El clamor de las ranas",
+        "description": "¡Seis ranas, seis habilidades! ¡Qué curioso!"
+      },
+      {
+        "apiname": "81067",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Una rara colección",
+        "description": "Posees todas y cada una de las rarezas que puede ofrecer este mundo."
+      },
+      {
+        "apiname": "81068",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Los cinco Skandhas",
+        "description": "Esta potente píldora aún porta su bienintencionado deseo."
+      },
+      {
+        "apiname": "81069",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Banquete medicinal",
+        "description": "«Toma. Llévatelo todo»."
+      },
+      {
+        "apiname": "81070",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Cada palmo de tierra",
+        "description": "«¡Detente! Ya has aplastado a todos los yaokuais del lugar...»."
+      },
+      {
+        "apiname": "81071",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Guardián de la batalla",
+        "description": "Vas bien equipado. ¡Ya es hora de que blandas el bastón y luches!"
+      },
+      {
+        "apiname": "81072",
+        "achieved": 1,
+        "unlocktime": 1786901681,
+        "name": "Un duelo de destinos",
+        "description": "Tras chocar las mentes, solo una permanece."
+      },
+      {
+        "apiname": "81073",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Retratos perfeccionados",
+        "description": "Humanos, bestias, yaokuais y Bodhisattvas. Todo registrados y anotado."
+      },
+      {
+        "apiname": "81074",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Seis Sentidos a buen recaudo",
+        "description": "¿A qué santo has derramado tanto sudor y tantas lágrimas?"
+      },
+      {
+        "apiname": "81075",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Experto en magia",
+        "description": "Todos los conjuros conocidos surgen de la misma fuente."
+      },
+      {
+        "apiname": "81076",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Botín de calabazas",
+        "description": "La calabaza es fácil de hallar, pero no el amigo con quien compartirla."
+      },
+      {
+        "apiname": "81077",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Conservador de páginas",
+        "description": "«Al fin todas las páginas raídas quedarán cumplidas»."
+      },
+      {
+        "apiname": "81078",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Refrescante abundancia",
+        "description": "Una mezcla para sacar lo mejor de cada bebida."
+      },
+      {
+        "apiname": "81079",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Poderosa cobertura",
+        "description": "Pies y cabeza cubiertos, camisa bordada y túnica daoísta. ¡Tal es la libertad de que dispones!"
+      },
+      {
+        "apiname": "81080",
+        "achieved": 0,
+        "unlocktime": 0,
+        "name": "Bastones y lanzas",
+        "description": "¡Te has convertido en una armería andante!"
+      },
+      {
+        "apiname": "81081",
+        "achieved": 1,
+        "unlocktime": 1786906852,
+        "name": "Suma culminación",
+        "description": "Tormento a tormento se sientan las bases de lo que debes ser."
+      }
+    ],
+    "success": true
+  }
+}

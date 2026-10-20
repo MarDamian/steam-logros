@@ -1,0 +1,161 @@
+{
+  "response": {
+    "game_count": 14,
+    "games": [
+      {
+        "appid": 2358720,
+        "name": "Black Myth: Wukong",
+        "playtime_forever": 4211,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 4211,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 1245620,
+        "name": "ELDEN RING",
+        "playtime_forever": 9640,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 9640,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 1086940,
+        "name": "Baldur's Gate 3",
+        "playtime_forever": 7312,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 7312,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 367520,
+        "name": "Hollow Knight",
+        "playtime_forever": 2890,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 2890,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 292030,
+        "name": "The Witcher 3: Wild Hunt",
+        "playtime_forever": 6120,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 6120,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 1174180,
+        "name": "Red Dead Redemption 2",
+        "playtime_forever": 3155,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 3155,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 413150,
+        "name": "Stardew Valley",
+        "playtime_forever": 5402,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 5402,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 620,
+        "name": "Portal 2",
+        "playtime_forever": 712,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 712,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 105600,
+        "name": "Terraria",
+        "playtime_forever": 1980,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 1980,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 275850,
+        "name": "No Man's Sky",
+        "playtime_forever": 460,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 460,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 236850,
+        "name": "Europa Universalis IV",
+        "playtime_forever": 142,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 142,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 570,
+        "name": "Dota 2",
+        "playtime_forever": 38,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 38,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 431960,
+        "name": "Wallpaper Engine",
+        "playtime_forever": 12040,
+        "img_icon_url": "",
+        "has_community_visible_stats": false,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 12040,
+        "rtime_last_played": 1792000000
+      },
+      {
+        "appid": 1172470,
+        "name": "Apex Legends",
+        "playtime_forever": 0,
+        "img_icon_url": "",
+        "has_community_visible_stats": true,
+        "playtime_windows_forever": 0,
+        "playtime_mac_forever": 0,
+        "playtime_linux_forever": 0,
+        "rtime_last_played": 1792000000
+      }
+    ]
+  }
+}

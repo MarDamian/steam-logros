@@ -1,0 +1,15 @@
+{
+  "response": {
+    "players": [
+      {
+        "steamid": "76561198000000002",
+        "communityvisibilitystate": 1,
+        "profilestate": 1,
+        "personaname": "Perfil Privado",
+        "profileurl": "https://steamcommunity.com/profiles/76561198000000002/",
+        "avatar": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg",
+        "avatarfull": "https://avatars.fastly.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg"
+      }
+    ]
+  }
+}
