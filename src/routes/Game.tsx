@@ -8,6 +8,7 @@ import {
   pendingPointsOfNoReturn,
   type AchievementType,
 } from '@shared/guide';
+import { resolveGameTitle } from '@shared/gameTitle';
 import { RARITY_TIERS, rarityTier, type RarityTier } from '@shared/rarity';
 import { isSteamId64 } from '@shared/steamid';
 import { AchievementRow } from '@/components/AchievementRow';
@@ -23,7 +24,7 @@ import { errorCodeOf } from '@/lib/apiErrors';
 import { useGuide, useGuideIndex } from '@/lib/guide';
 import { isSomeoneElse } from '@/lib/profile';
 import { useCurrentChapter, useNotes } from '@/lib/notes';
-import { steamLanguageFor, useCatalog, useProgress } from '@/lib/queries';
+import { steamLanguageFor, useCachedLibrary, useCatalog, useProgress } from '@/lib/queries';
 import { sortAchievements, type AchievementSort } from '@/lib/sorting';
 import { gameHeaderUrl, steamAchievementsUrl } from '@/lib/steamImages';
 
@@ -54,6 +55,7 @@ export function Game() {
 
   const catalog = useCatalog(validAppId ? appid : 0, steamLanguageFor(locale));
   const progress = useProgress(validSteamId ? steamid : null, validAppId ? appid : 0);
+  const library = useCachedLibrary(validSteamId ? steamid : null);
   const guideIndex = useGuideIndex();
   const guide = useGuide(validAppId ? appid : 0, guideIndex.data);
   const notes = useNotes(validAppId ? appid : 0);
@@ -68,6 +70,14 @@ export function Game() {
 
   const pack = guide.data ?? null;
   const hasGuide = pack !== null;
+
+  // El gameName del esquema de Steam no siempre es el nombre del juego.
+  const title = resolveGameTitle({
+    libraryName: library.data?.games.find((game) => game.appid === appid)?.name,
+    packName: pack?.game,
+    catalogName: catalog.data?.gameName,
+    appid,
+  });
 
   const achievements = useMemo(() => {
     const unlocked = progress.data?.unlocked ?? {};
@@ -142,7 +152,7 @@ export function Game() {
           decoding="async"
         />
         <div className="stack stack--tight">
-          <h1 style={{ fontSize: '1.5rem' }}>{catalog.data?.gameName ?? pack?.game ?? `App ${appid}`}</h1>
+          <h1 style={{ fontSize: '1.5rem' }}>{title}</h1>
           <div className="stats-row">
             <div className="stat">
               <p className="stat__value">{formatNumber(unlockedCount)}</p>

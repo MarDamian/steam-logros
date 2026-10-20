@@ -23,6 +23,8 @@ export const TTL = {
   library: 60 * 10,
   /** El progreso del jugador es lo más volátil. */
   progress: 60 * 5,
+  /** Un "no se pudo" se recuerda poco: lo justo para no insistirle a Steam. */
+  progressFailure: 60,
   player: 60 * 10,
   vanity: 60 * 60 * 24,
 } as const;
