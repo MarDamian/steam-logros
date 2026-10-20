@@ -13,7 +13,7 @@ global y el nivel de rareza.
 | --- | --- | --- |
 | 1 | Esqueleto, API serverless, entrada por SteamID, biblioteca y vista de juego | listo |
 | 2 | Login con OpenID 2.0 de Steam, sesión firmada y seguridad | listo |
-| 3 | Capa de guía por juego (perdibles, capítulos) y notas | pendiente |
+| 3 | Capa de guía por juego (perdibles, capítulos) y notas | listo |
 | 4 | PWA, exportar/importar, enlaces para compartir | pendiente |
 | 5 | README completo, despliegue en un clic, CI | pendiente |
 
@@ -79,6 +79,34 @@ Steam solo entrega logros de perfiles públicos. En
 *Editar perfil → Configuración de privacidad* hay que poner en **Público**
 tanto **Mi perfil** como **Detalles del juego**.
 
+## Capa de guía por juego
+
+Steam no sabe nada de capítulos, de logros que se pueden perder ni de cómo
+conseguir cada cosa: eso es dato de comunidad y vive en `games/<appid>.json`.
+Si un juego no tiene paquete, funciona igual con los datos de Steam.
+
+Cuando sí lo tiene, la vista del juego añade:
+
+- el tipo de cada logro (historia / se puede perder / en cualquier momento /
+  nueva partida+ / sin clasificar) y su capítulo,
+- cómo conseguirlo y el aviso correspondiente,
+- filtros por tipo y por capítulo,
+- un selector de "¿en qué capítulo vas?" que se recuerda por juego,
+- y el panel **Cuidado: puntos de no retorno**, que lista solo los logros que
+  todavía te faltan de cada punto que tengas por delante.
+
+El paquete que viene en el repo, `games/2358720.json` (Black Myth: Wukong),
+tiene **19 de los 81 logros clasificados** y lo dice en la interfaz. Esos 19
+salen de datos de Steam: el logro que cierra el prólogo es de historia y los que
+Steam no esconde son los acumulativos de colección y mejora. Los 62 ocultos
+quedan `sin-clasificar` a propósito: decidir si un logro se puede perder, y en
+qué capítulo está, no se puede sacar de la API, y un aviso de "perdible"
+equivocado es peor que ninguno. En [CONTRIBUTING.md](CONTRIBUTING.md) está cómo
+completarlo.
+
+Además, cada logro acepta una **nota propia** y una marca de "resuelto por mí",
+que se guardan en `localStorage` de ese dispositivo.
+
 ## Comandos
 
 ```bash
@@ -88,6 +116,9 @@ npm start          # sirve frontend + API desde un solo proceso Node
 npm run typecheck  # TypeScript estricto
 npm run lint       # ESLint
 npm test           # Vitest (no necesita clave de Steam)
+
+npm run guides:check    # valida los paquetes de guía y regenera games/index.json
+npm run guides:schema   # regenera games/schema.json desde shared/guide.ts
 ```
 
 ## Estructura
@@ -98,7 +129,8 @@ shared/       tipos y reglas que usan cliente y servidor
 server/       API Hono portable + capa de Steam con validación Zod
   steam/      clientes por endpoint, esquemas Zod y modo fixtures
   cache/      CacheStore: memoria por defecto, KV de Cloudflare si existe
-games/        paquetes de guía por appid (fase 3)
+games/        paquetes de guía por appid + esquema JSON generado
+tools/        scripts: generar y validar paquetes de guía
 tests/        pruebas de API, de lógica y de interfaz en jsdom
 ```
 

@@ -13,7 +13,10 @@
     "start": "tsx server/adapters/node.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "guides:build": "tsx tools/build-wukong-pack.ts",
+    "guides:schema": "tsx tools/guides-schema.ts",
+    "guides:check": "tsx tools/guides-check.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.5",

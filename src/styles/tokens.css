@@ -69,3 +69,20 @@
 
   --shadow: 0 1px 2px rgb(16 24 40 / 0.08), 0 8px 24px rgb(16 24 40 / 0.08);
 }
+
+/* Tipos de logro de la capa de guía */
+:root {
+  --type-historia: #6cc6ff;
+  --type-perdible: #f87171;
+  --type-cualquier: #4ade80;
+  --type-ngplus: #a78bfa;
+  --type-sin: #8fa3b8;
+}
+
+:root[data-theme='light'] {
+  --type-historia: #0a5fa8;
+  --type-perdible: #b4231f;
+  --type-cualquier: #0f7a3d;
+  --type-ngplus: #6d35c9;
+  --type-sin: #566677;
+}

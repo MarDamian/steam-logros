@@ -48,8 +48,8 @@ export default tseslint.config(
   },
 
   {
-    // El arranque del servidor sí puede escribir en consola.
-    files: ['server/adapters/**/*.ts'],
+    // El arranque del servidor y los scripts de línea de comandos sí informan por consola.
+    files: ['server/adapters/**/*.ts', 'tools/**/*.ts'],
     rules: { 'no-console': 'off' },
   },
 

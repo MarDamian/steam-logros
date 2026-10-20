@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'node:url';
+import { guidePacksPlugin } from './vite.plugin-guides';
 
 const API_PORT = process.env.API_PORT ?? '8787';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), guidePacksPlugin()],
   resolve: {
     alias: {
       '@shared': fileURLToPath(new URL('./shared', import.meta.url)),

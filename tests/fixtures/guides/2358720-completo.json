@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "appid": 2358720,
+  "game": "Black Myth: Wukong",
+  "locale": "es",
+  "updatedAt": "2026-10-20",
+  "source": { "name": "Paquete de ejemplo para pruebas" },
+  "note": "Paquete inventado: existe solo para probar la capa de guía de punta a punta.",
+  "chapters": [
+    { "id": "prologo", "order": 0, "name": "Prólogo" },
+    { "id": "capitulo-1", "order": 1, "name": "Capítulo 1" },
+    { "id": "capitulo-2", "order": 2, "name": "Capítulo 2" },
+    { "id": "capitulo-3", "order": 3, "name": "Capítulo 3" }
+  ],
+  "achievements": {
+    "81001": { "type": "historia", "chapter": "prologo", "how": "Terminá el prólogo." },
+    "81003": {
+      "type": "perdible",
+      "chapter": "capitulo-1",
+      "how": "Hablá con el guardián antes de pelear.",
+      "warning": "Si avanzás sin hablarle, se va y no vuelve en esta partida.",
+      "pointOfNoReturn": "fin-capitulo-1"
+    },
+    "81024": {
+      "type": "perdible",
+      "chapter": "capitulo-1",
+      "how": "Completá el encargo largo antes de cerrar el capítulo.",
+      "warning": "Queda fuera de alcance al pasar al Capítulo 2.",
+      "pointOfNoReturn": "fin-capitulo-1"
+    },
+    "81060": { "type": "cualquier-momento", "how": "Juntá los cuatro artefactos cuando quieras." },
+    "81081": { "type": "ng+", "chapter": "capitulo-3", "how": "Necesita una segunda vuelta." },
+    "81002": { "type": "sin-clasificar" }
+  },
+  "pointsOfNoReturn": [
+    {
+      "id": "fin-capitulo-1",
+      "chapter": "capitulo-1",
+      "title": "Antes del jefe final del Capítulo 1",
+      "description": "Al derrotarlo empieza el Capítulo 2 y el mapa anterior deja de estar disponible.",
+      "locks": ["81003", "81024"]
+    }
+  ]
+}

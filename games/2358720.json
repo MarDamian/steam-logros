@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "appid": 2358720,
+  "game": "Black Myth: Wukong",
+  "locale": "es",
+  "updatedAt": "2026-10-20",
+  "source": {
+    "name": "Lista oficial de logros de Steam",
+    "url": "https://steamcommunity.com/stats/2358720/achievements/"
+  },
+  "note": "Paquete incompleto a propósito. Los 19 logros clasificados salen de datos de Steam: el que cierra el prólogo es de historia y los que Steam no esconde son los acumulativos de colección y mejora. Los 62 logros ocultos quedan sin clasificar porque decidir si uno se puede perder, y en qué capítulo, es dato de comunidad: la API de Steam no lo tiene. En CONTRIBUTING.md está cómo completarlo.",
+  "chapters": [
+    {
+      "id": "prologo",
+      "order": 0,
+      "name": "Prólogo"
+    },
+    {
+      "id": "capitulo-1",
+      "order": 1,
+      "name": "Capítulo 1"
+    },
+    {
+      "id": "capitulo-2",
+      "order": 2,
+      "name": "Capítulo 2"
+    },
+    {
+      "id": "capitulo-3",
+      "order": 3,
+      "name": "Capítulo 3"
+    },
+    {
+      "id": "capitulo-4",
+      "order": 4,
+      "name": "Capítulo 4"
+    },
+    {
+      "id": "capitulo-5",
+      "order": 5,
+      "name": "Capítulo 5"
+    },
+    {
+      "id": "capitulo-6",
+      "order": 6,
+      "name": "Capítulo 6"
+    }
+  ],
+  "achievements": {
+    "81001": {
+      "type": "historia",
+      "chapter": "prologo"
+    },
+    "81002": {
+      "type": "cualquier-momento"
+    },
+    "81003": {
+      "type": "sin-clasificar"
+    },
+    "81004": {
+      "type": "sin-clasificar"
+    },
+    "81005": {
+      "type": "cualquier-momento"
+    },
+    "81006": {
+      "type": "sin-clasificar"
+    },
+    "81007": {
+      "type": "cualquier-momento"
+    },
+    "81008": {
+      "type": "sin-clasificar"
+    },
+    "81009": {
+      "type": "sin-clasificar"
+    },
+    "81010": {
+      "type": "sin-clasificar"
+    },
+    "81011": {
+      "type": "cualquier-momento"
+    },
+    "81012": {
+      "type": "sin-clasificar"
+    },
+    "81013": {
+      "type": "sin-clasificar"
+    },
+    "81014": {
+      "type": "sin-clasificar"
+    },
+    "81015": {
+      "type": "sin-clasificar"
+    },
+    "81016": {
+      "type": "sin-clasificar"
+    },
+    "81017": {
+      "type": "sin-clasificar"
+    },
+    "81018": {
+      "type": "sin-clasificar"
+    },
+    "81019": {
+      "type": "sin-clasificar"
+    },
+    "81020": {
+      "type": "sin-clasificar"
+    },
+    "81021": {
+      "type": "sin-clasificar"
+    },
+    "81022": {
+      "type": "sin-clasificar"
+    },
+    "81023": {
+      "type": "sin-clasificar"
+    },
+    "81024": {
+      "type": "sin-clasificar"
+    },
+    "81025": {
+      "type": "sin-clasificar"
+    },
+    "81026": {
+      "type": "sin-clasificar"
+    },
+    "81027": {
+      "type": "sin-clasificar"
+    },
+    "81028": {
+      "type": "sin-clasificar"
+    },
+    "81029": {
+      "type": "sin-clasificar"
+    },
+    "81030": {
+      "type": "sin-clasificar"
+    },
+    "81031": {
+      "type": "sin-clasificar"
+    },
+    "81032": {
+      "type": "sin-clasificar"
+    },
+    "81033": {
+      "type": "sin-clasificar"
+    },
+    "81034": {
+      "type": "sin-clasificar"
+    },
+    "81035": {
+      "type": "sin-clasificar"
+    },
+    "81036": {
+      "type": "sin-clasificar"
+    },
+    "81037": {
+      "type": "sin-clasificar"
+    },
+    "81038": {
+      "type": "sin-clasificar"
+    },
+    "81039": {
+      "type": "sin-clasificar"
+    },
+    "81040": {
+      "type": "sin-clasificar"
+    },
+    "81041": {
+      "type": "sin-clasificar"
+    },
+    "81042": {
+      "type": "sin-clasificar"
+    },
+    "81043": {
+      "type": "sin-clasificar"
+    },
+    "81044": {
+      "type": "sin-clasificar"
+    },
+    "81045": {
+      "type": "sin-clasificar"
+    },
+    "81046": {
+      "type": "sin-clasificar"
+    },
+    "81047": {
+      "type": "sin-clasificar"
+    },
+    "81048": {
+      "type": "sin-clasificar"
+    },
+    "81049": {
+      "type": "sin-clasificar"
+    },
+    "81050": {
+      "type": "sin-clasificar"
+    },
+    "81051": {
+      "type": "sin-clasificar"
+    },
+    "81052": {
+      "type": "cualquier-momento"
+    },
+    "81053": {
+      "type": "sin-clasificar"
+    },
+    "81054": {
+      "type": "sin-clasificar"
+    },
+    "81055": {
+      "type": "cualquier-momento"
+    },
+    "81056": {
+      "type": "sin-clasificar"
+    },
+    "81057": {
+      "type": "sin-clasificar"
+    },
+    "81058": {
+      "type": "sin-clasificar"
+    },
+    "81059": {
+      "type": "sin-clasificar"
+    },
+    "81060": {
+      "type": "sin-clasificar"
+    },
+    "81061": {
+      "type": "sin-clasificar"
+    },
+    "81062": {
+      "type": "sin-clasificar"
+    },
+    "81063": {
+      "type": "cualquier-momento"
+    },
+    "81064": {
+      "type": "cualquier-momento"
+    },
+    "81065": {
+      "type": "sin-clasificar"
+    },
+    "81066": {
+      "type": "sin-clasificar"
+    },
+    "81067": {
+      "type": "cualquier-momento"
+    },
+    "81068": {
+      "type": "sin-clasificar"
+    },
+    "81069": {
+      "type": "cualquier-momento"
+    },
+    "81070": {
+      "type": "sin-clasificar"
+    },
+    "81071": {
+      "type": "sin-clasificar"
+    },
+    "81072": {
+      "type": "sin-clasificar"
+    },
+    "81073": {
+      "type": "cualquier-momento"
+    },
+    "81074": {
+      "type": "sin-clasificar"
+    },
+    "81075": {
+      "type": "cualquier-momento"
+    },
+    "81076": {
+      "type": "cualquier-momento"
+    },
+    "81077": {
+      "type": "cualquier-momento"
+    },
+    "81078": {
+      "type": "cualquier-momento"
+    },
+    "81079": {
+      "type": "cualquier-momento"
+    },
+    "81080": {
+      "type": "cualquier-momento"
+    },
+    "81081": {
+      "type": "cualquier-momento"
+    }
+  },
+  "pointsOfNoReturn": []
+}

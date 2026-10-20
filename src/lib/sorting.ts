@@ -1,5 +1,5 @@
+import type { GuidedAchievement } from '@shared/guide';
 import type { GameProgressSummary, LibraryGame } from '@shared/types';
-import type { AchievementView } from '@/components/AchievementRow';
 
 export type LibrarySort = 'name' | 'playtime' | 'completion' | 'closest';
 export type AchievementSort = 'easiest' | 'hardest' | 'name' | 'recent' | 'default';
@@ -54,9 +54,9 @@ export function sortGames(
 
 /** El porcentaje global es el proxy de dificultad: más alto, más fácil. */
 export function sortAchievements(
-  list: readonly AchievementView[],
+  list: readonly GuidedAchievement[],
   sort: AchievementSort,
-): AchievementView[] {
+): GuidedAchievement[] {
   const sorted = [...list];
   switch (sort) {
     case 'easiest':

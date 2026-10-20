@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Paquete de guía por juego",
+  "description": "Generado desde shared/guide.ts con `npm run guides:schema`. No editar a mano: el esquema de Zod es la fuente de verdad.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "appid": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "game": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "locale": {
+      "type": "string",
+      "enum": [
+        "es",
+        "en"
+      ]
+    },
+    "updatedAt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "chapters": {
+      "default": [],
+      "maxItems": 200,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        },
+        "required": [
+          "id",
+          "order",
+          "name"
+        ]
+      }
+    },
+    "achievements": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "historia",
+              "perdible",
+              "cualquier-momento",
+              "ng+",
+              "sin-clasificar"
+            ]
+          },
+          "chapter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "how": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "warning": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "pointOfNoReturn": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    },
+    "pointsOfNoReturn": {
+      "default": [],
+      "maxItems": 200,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "chapter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "locks": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "locks"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "appid",
+    "game",
+    "locale",
+    "updatedAt"
+  ]
+}
