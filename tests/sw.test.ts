@@ -39,7 +39,7 @@ function cargarServiceWorker(respuestaEnCache: Response | undefined): Entorno {
     delete: async () => true,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval, no-new-func
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval
   const ejecutar = new Function('self', 'caches', 'fetch', 'Response', 'Request', 'URL', FUENTE) as (
     ...args: unknown[]
   ) => void;

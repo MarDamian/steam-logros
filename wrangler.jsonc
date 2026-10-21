@@ -15,7 +15,15 @@
   "assets": {
     "directory": "./dist/client",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    // Sin esto, los estáticos se sirven ANTES que el Worker y, como
+    // not_found_handling es single-page-application, cualquier *navegación* del
+    // navegador a una ruta que no sea un archivo recibe index.html sin que el
+    // Worker llegue a ejecutarse. Las llamadas desde JavaScript sí llegaban,
+    // porque no son navegaciones: por eso la API funcionaba y el botón de
+    // "Entrar con Steam" recargaba la página. El login de Steam son dos
+    // navegaciones (ir a /api/auth/steam/start y volver a /api/auth/steam/return).
+    "run_worker_first": ["/api/*"]
   },
 
   // Caché de las respuestas de Steam. Va declarada acá y no solo en el panel:
